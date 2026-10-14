@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare Mechanic Management</title>
+  <link rel="stylesheet" href="../../assets/css/manager/Default-sidebar-topbar-style.css">
+  <link rel="stylesheet" href="../../assets/css/manager/manager-mechanics.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="manager-dashboard.html" style="text-decoration: none;">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </a>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a class="nav-item" href="manager-dashboard.html">
+          <span class="icon"><i class="fa-solid fa-border-all"></i></span>Dashboard
+        </a>
+
+        <a class="nav-item" href="manager-booking-request.html">
+          <span class="icon"><i class="fa-regular fa-calendar-check"></i></span>Booking Requests
+        </a>
+
+        <a class="nav-item" href="manager-jobCards.html">
+          <span class="icon"><i class="fa-regular fa-clipboard"></i></span>Job Cards
+        </a>
+
+        <a class="nav-item active" href="manager-mechanics.html">
+          <span class="icon"><i class="fa-solid fa-users-gear"></i></span>Mechanics
+        </a>
+
+        <a class="nav-item" href="manager-process-tracker.html">
+          <span class="icon"><i class="fa-solid fa-list-check"></i></span>Job Tracking
+        </a>
+
+        <a class="nav-item" href="manager-cost-estimation.html">
+          <span class="icon"><i class="fa-solid fa-calculator"></i></span>Cost Estimates
+        </a>
+
+        <a class="nav-item" href="manager-invoice-management.html">
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Invoices
+        </a>
+
+        <a class="nav-item" href="manager-payment-approval.html">
+          <span class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>Spare Parts Approval
+        </a>
+
+        <a class="nav-item" href="manager-chat.html">
+          <span class="icon"><i class="fa-regular fa-comments"></i></span>Chats
+        </a>
+
+        <a class="nav-item" href="manager-performance.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>Report
+        </a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+
+      <!-- CONTENT -->
+      <section class="content">
+
+        <!-- Page Header & Filters -->
+        <div class="page-heading">
+          <div>
+            <h1>Mechanic Management</h1>
+            <p>Assign job cards and monitor team workload.</p>
+          </div>
+
+          <div class="filters">
+            <div class="select-wrapper">
+              <select>
+                <option>All Specializations</option>
+                <option>Engine Specialist</option>
+                <option>Electrician</option>
+                <option>Suspension Spec.</option>
+              </select>
+            </div>
+
+            <div class="select-wrapper">
+              <select>
+                <option>Availability: Any</option>
+                <option>Available</option>
+                <option>Busy</option>
+                <option>Off Shift</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- MECHANIC CARDS GRID -->
+        <div class="mechanic-grid">
+
+          <!-- Card 1: David Chui -->
+          <article class="mechanic-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" alt="David Chui" class="mechanic-avatar">
+              <div class="mechanic-info">
+                <div class="name-status">
+                  <h3>David Chui</h3>
+                  <span class="status-badge available">AVAILABLE</span>
+                </div>
+                <p class="specialty">Engine Specialist</p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="info-row">
+                <span class="label">Experience</span>
+                <span class="value">8 Years</span>
+              </div>
+
+              <div class="workload-section">
+                <div class="workload-header">
+                  <span class="label">CURRENT WORKLOAD</span>
+                  <span class="percentage">20%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill low" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary">Assign Job</button>
+            </div>
+          </article>
+
+          <!-- Card 2: Sarah Jenkins -->
+          <article class="mechanic-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" alt="Sarah Jenkins" class="mechanic-avatar">
+              <div class="mechanic-info">
+                <div class="name-status">
+                  <h3>Sarah Jenkins</h3>
+                  <span class="status-badge busy"><span class="dot"></span>BUSY</span>
+                </div>
+                <p class="specialty">Electrician</p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="info-row">
+                <span class="label">Experience</span>
+                <span class="value">5 Years</span>
+              </div>
+
+              <div class="workload-section">
+                <div class="workload-header">
+                  <span class="label">CURRENT WORKLOAD</span>
+                  <span class="percentage high">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill high" style="width: 90%;"></div>
+                </div>
+              </div>
+
+              <button class="btn btn-disabled" disabled>Assign Job</button>
+            </div>
+          </article>
+
+          <!-- Card 3: Marc Lowe -->
+          <article class="mechanic-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Marc Lowe" class="mechanic-avatar">
+              <div class="mechanic-info">
+                <div class="name-status">
+                  <h3>Marc Lowe</h3>
+                  <span class="status-badge off-shift">OFF SHIFT</span>
+                </div>
+                <p class="specialty">Suspension Spec.</p>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="info-row">
+                <span class="label">Experience</span>
+                <span class="value">3 Years</span>
+              </div>
+
+              <div class="workload-section">
+                <div class="workload-header">
+                  <span class="label">CURRENT WORKLOAD</span>
+                  <span class="percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill low" style="width: 0%;"></div>
+                </div>
+              </div>
+
+              <button class="btn btn-disabled" disabled>Assign Job</button>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../../assets/js/manager/manager-store.js"></script>
+  <script src="../../assets/js/manager/manager-common.js"></script>
+  <script src="../../assets/js/manager/manager-mechanics.js"></script>
+</body>
+</html>

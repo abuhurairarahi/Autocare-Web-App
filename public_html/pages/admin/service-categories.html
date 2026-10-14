@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Service Categories</title>
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="../../assets/css/admin/service-categories.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item active"><i class="fa-solid fa-layer-group"></i> Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Dashboard Container -->
+            <div class="content-body">
+                <div class="page-header-row">
+                    <div class="page-title-container">
+                        <h1>Service Categories</h1>
+                        <p>Manage and organize workshop service offerings.</p>
+                    </div>
+                    <div class="page-controls">
+                        <button class="btn btn-secondary">
+                            <i class="fa-solid fa-filter"></i> Filter
+                        </button>
+                        <button class="btn btn-primary" id="add-category-btn" data-wired="true">
+                            <i class="fa-solid fa-plus"></i> Add Category
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Cards Grid -->
+                <div class="cards-grid">
+                    <!-- Card 1: Engine Diagnostics -->
+                    <div class="service-card">
+                        <div class="card-top">
+                            <div class="service-icon-box blue-tint">
+                                <i class="fa-solid fa-car-battery"></i>
+                            </div>
+                            <button class="badge active">ACTIVE</button>
+                        </div>
+                        <div class="card-body">
+                            <h3>Engine Diagnostics & Repair</h3>
+                            <p>Comprehensive engine health checks, overhauls, timing belt...</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-info">
+                                <span class="price-label">BASE PRICE</span>
+                                <span class="price-value">&#2547;16,500</span>
+                            </div>
+                            <span class="item-count">24</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Electrical Systems -->
+                    <div class="service-card">
+                        <div class="card-top">
+                            <div class="service-icon-box blue-tint">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <button class="badge active">ACTIVE</button>
+                        </div>
+                        <div class="card-body">
+                            <h3>Electrical Systems</h3>
+                            <p>Battery replacement, alternator repairs, wiring loom diagnostics, and electronic control
+                                unit (ECU)</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-info">
+                                <span class="price-label">BASE PRICE</span>
+                                <span class="price-value">&#2547;9,800</span>
+                            </div>
+                            <span class="item-count">18</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Denting & Painting -->
+                    <div class="service-card">
+                        <div class="card-top">
+                            <div class="service-icon-box red-tint">
+                                <i class="fa-solid fa-paint-roller"></i>
+                            </div>
+                            <button class="badge review">IN REVIEW</button>
+                        </div>
+                        <div class="card-body">
+                            <h3>Denting & Painting</h3>
+                            <p>Panel beating, scratch removal, full body resprays, and ceramic coating applications.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-info">
+                                <span class="price-label">BASE PRICE</span>
+                                <span class="price-value">&#2547;33,000</span>
+                            </div>
+                            <span class="item-count">12</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Create New Category Placeholder -->
+                    <div class="service-card dashed-card" id="add-category-card-btn" style="cursor: pointer;" data-wired="true">
+                        <div class="dashed-content">
+                            <div class="add-circle-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <h3>Create New Category</h3>
+                            <p>Define a new service grouping for your workshop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+  <!-- Add Category Modal -->
+  <div class="modal-overlay" id="add-category-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add Category</h2>
+        <button class="modal-close" id="close-category-modal-btn">&times;</button>
+      </div>
+      <form id="add-category-form">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="category-name" required placeholder="e.g. Engine Diagnostics">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" id="category-desc" required placeholder="Description of category">
+        </div>
+        <div class="form-group">
+          <label>Base Price</label>
+          <input type="number" id="category-price" required placeholder="e.g. 5000">
+        </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select id="category-status" required>
+            <option value="ACTIVE">Active</option>
+            <option value="INACTIVE">Inactive</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-category-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+\n<script src="../../assets/js/admin/service-categories.js"></script>
+<script src="../../assets/js/admin/admin-common.js"></script>
+</body>
+
+</html>

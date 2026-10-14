@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare Mechanic - Progress</title>
+    <link rel="stylesheet" href="../../assets/css/mechanic/mechanic-workflow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/shared/default-sidebar-topbar-style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="mechanic-dashboard.html" class="nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="mechanic-assigned-jobs.html" class="nav-item"><i class="fa-solid fa-clipboard-list"></i> Assigned Jobs</a>
+                <a href="mechanic-workflow.html" class="nav-item active"><i class="fa-solid fa-diagram-project"></i> Progress</a>
+                <a href="mechanic-parts-labor.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Parts &amp; Labor</a>
+                <a href="mechanic-repair-photos.html" class="nav-item"><i class="fa-solid fa-camera"></i> Update Photos</a>
+                <a href="mechanic-fault-report.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i> Report Faults</a>
+                <a href="mechanic-chat.html" class="nav-item"><i class="fa-solid fa-comments"></i> Chats</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <section class="content">
+                <div class="wf-wrap">
+
+                    <!-- Job detail header -->
+                    <div class="wf-header">
+                        <div class="wf-header__info">
+                            <div class="wf-eyebrow">
+                                <span class="wf-eyebrow__id">Job #JC-8821</span>
+                                <span class="wf-pill-priority">High Priority</span>
+                            </div>
+                            <h1 class="wf-title">2022 Toyota Camry SE</h1>
+                            <p class="wf-client"><i class="fa-solid fa-user"></i> Client: Sarah Jenkins</p>
+                        </div>
+                        <div class="wf-header__actions">
+                            <button class="wf-btn wf-btn--muted"><i class="fa-solid fa-ellipsis"></i> Options</button>
+                            <button class="wf-btn wf-btn--primary"><i class="fa-solid fa-circle-check"></i> Complete Task</button>
+                        </div>
+                    </div>
+
+                    <!-- Two column layout -->
+                    <div class="wf-grid">
+
+                        <!-- Left column -->
+                        <div class="wf-col-left">
+
+                            <!-- Overall status card -->
+                            <article class="wf-status">
+                                <div class="wf-status__main">
+                                    <span class="wf-status__icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                                    <div>
+                                        <h2 class="wf-status__title">In Progress - Repairing</h2>
+                                        <p class="wf-status__sub">Estimated completion: Today, 4:30 PM</p>
+                                    </div>
+                                </div>
+                                <div class="wf-status__kpis">
+                                    <div class="wf-kpi">
+                                        <span class="wf-kpi__label">Time Elapsed</span>
+                                        <span class="wf-kpi__value">3h 45m</span>
+                                    </div>
+                                    <div class="wf-kpi">
+                                        <span class="wf-kpi__label">Stage Progress</span>
+                                        <span class="wf-kpi__value">65%</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Workflow stages -->
+                            <article class="wf-stages-card">
+                                <h3 class="wf-stages-card__title">Workflow Stages</h3>
+                                <ol class="wf-stages">
+                                    <span class="wf-stages__line" aria-hidden="true"></span>
+
+                                    <!-- Stage 1 - completed -->
+                                    <li class="wf-stage wf-stage--done">
+                                        <span class="wf-stage__marker"><i class="fa-solid fa-check"></i></span>
+                                        <div class="wf-stage__body">
+                                            <div class="wf-stage__row">
+                                                <h4 class="wf-stage__name">Stage 1: Diagnosis</h4>
+                                                <span class="wf-stage__time">08:00 AM - 09:30 AM</span>
+                                            </div>
+                                            <p class="wf-stage__meta">Completed by Mike T.</p>
+                                            <div class="wf-stage__cta">
+                                                <button class="wf-btn wf-btn--outline"><i class="fa-solid fa-paper-plane"></i> Send Estimation</button>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- Stage 2 - active -->
+                                    <li class="wf-stage wf-stage--active">
+                                        <span class="wf-stage__marker"><i class="fa-solid fa-gear"></i></span>
+                                        <div class="wf-stage__body wf-stage__card">
+                                            <div class="wf-stage__row">
+                                                <h4 class="wf-stage__name wf-stage__name--active">Stage 2: Repairing</h4>
+                                                <span class="wf-pill-active">Active</span>
+                                            </div>
+                                            <ul class="wf-tasks">
+                                                <li class="wf-task">
+                                                    <input class="wf-check" type="checkbox" id="task-1" checked>
+                                                    <label class="wf-task__label wf-task__label--done" for="task-1">Drain coolant system completely</label>
+                                                </li>
+                                                <li class="wf-task">
+                                                    <input class="wf-check" type="checkbox" id="task-2">
+                                                    <label class="wf-task__label" for="task-2">
+                                                        <span class="wf-task__title">Replace thermostat assembly</span>
+                                                        <span class="wf-task__note">Torque bolts to spec (15 Nm). Ensure gasket is seated correctly.</span>
+                                                    </label>
+                                                </li>
+                                                <li class="wf-task">
+                                                    <input class="wf-check" type="checkbox" id="task-3">
+                                                    <label class="wf-task__label" for="task-3">Flush and refill coolant</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <!-- Stage 3 - upcoming -->
+                                    <li class="wf-stage wf-stage--upcoming">
+                                        <span class="wf-stage__marker"><i class="fa-solid fa-gauge-high"></i></span>
+                                        <div class="wf-stage__body">
+                                            <div class="wf-stage__row">
+                                                <h4 class="wf-stage__name">Stage 3: Testing</h4>
+                                                <span class="wf-pill-pending">Pending</span>
+                                            </div>
+                                            <p class="wf-stage__meta">System pressure test &amp; road test.</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </article>
+                        </div>
+
+                        <!-- Right column -->
+                        <aside class="wf-col-right">
+
+                            <!-- Resources -->
+                            <article class="wf-resources">
+                                <h3 class="wf-card-eyebrow">Resources</h3>
+                                <div class="wf-resources__tiles">
+                                    <div class="wf-tile">
+                                        <span class="wf-tile__icon"><i class="fa-solid fa-box-archive"></i></span>
+                                        <span class="wf-tile__value">3</span>
+                                        <span class="wf-tile__label">Parts Logged</span>
+                                    </div>
+                                    <div class="wf-tile">
+                                        <span class="wf-tile__icon"><i class="fa-regular fa-clock"></i></span>
+                                        <span class="wf-tile__value">2.5h</span>
+                                        <span class="wf-tile__label">Labor Logged</span>
+                                    </div>
+                                </div>
+                                <button class="wf-link-btn">View Details <i class="fa-solid fa-arrow-right"></i></button>
+                            </article>
+
+                            <!-- Activity log -->
+                            <article class="wf-activity">
+                                <div class="wf-activity__head">
+                                    <h3 class="wf-card-eyebrow">Activity Log</h3>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+
+                                <ul class="wf-log">
+                                    <li class="wf-log__item">
+                                        <span class="wf-avatar">MT</span>
+                                        <div class="wf-log__body">
+                                            <p class="wf-log__text"><strong>Mike T.</strong> checked off "Drain coolant system"</p>
+                                            <span class="wf-log__time">15 mins ago</span>
+                                        </div>
+                                    </li>
+                                    <li class="wf-log__item">
+                                        <span class="wf-avatar wf-avatar--icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                                        <div class="wf-log__body">
+                                            <p class="wf-log__text">Stage changed to <strong>Repairing</strong></p>
+                                            <span class="wf-log__time">1 hour ago</span>
+                                        </div>
+                                    </li>
+                                    <li class="wf-log__item">
+                                        <span class="wf-avatar">MT</span>
+                                        <div class="wf-log__body">
+                                            <p class="wf-log__text"><strong>Mike T.</strong> added a note:</p>
+                                            <blockquote class="wf-note">"Old thermostat housing was slightly corroded, cleaned mating surface before installing new gasket."</blockquote>
+                                            <span class="wf-log__time">2 hours ago</span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="wf-add-note">
+                                    <input type="text" class="wf-add-note__input" placeholder="Add a quick note...">
+                                    <button type="button" class="wf-add-note__send" aria-label="Send note"><i class="fa-solid fa-paper-plane"></i></button>
+                                </div>
+                            </article>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

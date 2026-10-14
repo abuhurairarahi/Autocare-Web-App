@@ -1,0 +1,356 @@
+:root {
+    --aj-navy: #00175c;
+    --aj-page-bg: #fbf8ff;
+    --aj-panel-bg: #f4f2fc;
+    --aj-head-bg: #eeedf6;
+    --aj-border: #c5c5d4;
+    --aj-text-dark: #1a1b22;
+    --aj-text-body: #444652;
+    --aj-radius-card: 8px;
+    --aj-radius-btn: 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--aj-page-bg);
+    color: var(--aj-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar-footer {
+    width: 100%;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background: var(--aj-page-bg);
+    overflow: hidden;
+}
+
+/* ---------- Page heading + filters ---------- */
+.page-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.page-head__text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    color: var(--aj-navy);
+}
+
+.page-head__text p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--aj-text-body);
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 17px;
+    border: 1px solid var(--aj-border);
+    border-radius: var(--aj-radius-btn);
+    background: var(--aj-head-bg);
+    color: var(--aj-text-dark);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+}
+
+.filter-btn i {
+    font-size: 11px;
+    color: var(--aj-text-body);
+}
+
+.filter-btn:hover {
+    background: #e6e4f0;
+}
+
+/* ---------- Table card ---------- */
+.table-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--aj-panel-bg);
+    border: 1px solid var(--aj-border);
+    border-radius: var(--aj-radius-card);
+    overflow: hidden;
+}
+
+.table-scroll {
+    flex: 1;
+    overflow: auto;
+}
+
+.jobs {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jobs thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 16px;
+    text-align: left;
+    white-space: nowrap;
+    background: var(--aj-head-bg);
+    border-bottom: 1px solid var(--aj-border);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--aj-text-body);
+}
+
+.jobs thead th.col-actions {
+    text-align: right;
+}
+
+.jobs tbody td {
+    padding: 16px;
+    border-top: 1px solid var(--aj-border);
+    vertical-align: middle;
+    font-size: 14px;
+    color: var(--aj-text-body);
+}
+
+.jobs tbody tr:first-child td {
+    border-top: none;
+}
+
+.job-id {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--aj-navy);
+    white-space: nowrap;
+}
+
+.vehicle-plate {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--aj-text-dark);
+}
+
+.vehicle-model {
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--aj-text-body);
+}
+
+.col-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.row-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ---------- Pills ---------- */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+.pill--high {
+    background: #ffdad6;
+    color: #93000a;
+}
+
+.pill--medium {
+    background: #ffb59a;
+    color: #7a300f;
+}
+
+.pill--low {
+    background: #d4e3ff;
+    color: #56657c;
+}
+
+.pill--progress {
+    background: #ffdbce;
+    color: #370e00;
+}
+
+.pill--parts {
+    background: #d4e3ff;
+    color: #0c1c30;
+}
+
+.pill--ready {
+    padding: 5px 9px;
+    background: #e3e1ea;
+    border: 1px solid var(--aj-border);
+    color: var(--aj-text-body);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--aj-radius-btn);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background: var(--aj-navy);
+    color: #ffffff;
+}
+
+.btn--primary:hover {
+    background: #001246;
+}
+
+.btn--muted {
+    background: #e3e1ea;
+    color: var(--aj-text-body);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--aj-text-body);
+}
+
+.btn--ghost:hover {
+    background: var(--aj-head-bg);
+}
+
+/* ---------- Pagination ---------- */
+.pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 16px;
+    background: var(--aj-head-bg);
+    border-top: 1px solid var(--aj-border);
+}
+
+.pager__info {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--aj-text-body);
+}
+
+.pager__controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pager__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--aj-text-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+}
+
+.pager__btn.is-active {
+    background: var(--aj-navy);
+    color: #ffffff;
+}
+
+.pager__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    border: none;
+    background: transparent;
+    color: var(--aj-text-body);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pager__nav.is-disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .content {
+        overflow: auto;
+    }
+
+    .page-head {
+        align-items: flex-start;
+    }
+
+    .jobs {
+        min-width: 720px;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .filters {
+        width: 100%;
+    }
+}

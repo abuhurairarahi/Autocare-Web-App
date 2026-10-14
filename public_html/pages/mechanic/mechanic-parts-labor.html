@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare Mechanic - Parts &amp; Labor</title>
+    <link rel="stylesheet" href="../../assets/css/mechanic/mechanic-parts-labor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/shared/default-sidebar-topbar-style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="mechanic-dashboard.html" class="nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="mechanic-assigned-jobs.html" class="nav-item"><i class="fa-solid fa-clipboard-list"></i> Assigned Jobs</a>
+                <a href="mechanic-workflow.html" class="nav-item"><i class="fa-solid fa-diagram-project"></i> Progress</a>
+                <a href="mechanic-parts-labor.html" class="nav-item active"><i class="fa-solid fa-toolbox"></i> Parts &amp; Labor</a>
+                <a href="mechanic-repair-photos.html" class="nav-item"><i class="fa-solid fa-camera"></i> Update Photos</a>
+                <a href="mechanic-fault-report.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i> Report Faults</a>
+                <a href="mechanic-chat.html" class="nav-item"><i class="fa-solid fa-comments"></i> Chats</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <section class="content">
+                <div class="pl-wrap">
+
+                    <!-- Page header -->
+                    <div class="pl-header">
+                        <div class="pl-header__text">
+                            <h1>Parts &amp; Labor: JC-8821</h1>
+                            <p>Record components used and time spent on current task.</p>
+                        </div>
+                        <span class="pl-status">In Progress</span>
+                    </div>
+
+                    <!-- Two column layout -->
+                    <div class="pl-grid">
+
+                        <!-- Left column: data entry -->
+                        <div class="pl-col-left">
+
+                            <!-- Spare parts -->
+                            <section class="pl-card">
+                                <div class="pl-card__head">
+                                    <h2 class="pl-card__title"><i class="fa-solid fa-box-archive"></i> Spare Parts Recording</h2>
+                                    <button type="button" class="pl-btn pl-btn--primary"><i class="fa-solid fa-plus"></i> Add Part</button>
+                                </div>
+
+                                <div class="pl-table-wrap">
+                                    <table class="pl-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Part Name</th>
+                                                <th>Part Number</th>
+                                                <th class="ta-r">Qty</th>
+                                                <th class="ta-r">Unit Price</th>
+                                                <th class="ta-r">Total</th>
+                                                <th class="ta-c">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="pl-strong">Brake Pad Set (Front)</td>
+                                                <td>BP-F-88902</td>
+                                                <td class="ta-r pl-strong">1</td>
+                                                <td class="ta-r">$45.00</td>
+                                                <td class="ta-r pl-total">$45.00</td>
+                                                <td class="ta-c">
+                                                    <div class="pl-row-actions">
+                                                        <button type="button" aria-label="Edit part"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button type="button" aria-label="Delete part"><i class="fa-solid fa-trash"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="pl-strong">Synthetic Motor Oil (5W-30)</td>
+                                                <td>OIL-SYN-530</td>
+                                                <td class="ta-r pl-strong">5</td>
+                                                <td class="ta-r">$12.50</td>
+                                                <td class="ta-r pl-total">$62.50</td>
+                                                <td class="ta-c">
+                                                    <div class="pl-row-actions">
+                                                        <button type="button" aria-label="Edit part"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button type="button" aria-label="Delete part"><i class="fa-solid fa-trash"></i></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <!-- Labor hours -->
+                            <section class="pl-card">
+                                <div class="pl-card__head pl-card__head--plain">
+                                    <h2 class="pl-card__title"><i class="fa-regular fa-clock"></i> Labor Recording</h2>
+                                </div>
+
+                                <form class="pl-labor-grid">
+                                    <div class="pl-field">
+                                        <label class="pl-label" for="start-time">Start Time</label>
+                                        <div class="pl-input-icon">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <input type="text" id="start-time" value="08:30 AM">
+                                        </div>
+                                    </div>
+                                    <div class="pl-field">
+                                        <label class="pl-label" for="end-time">End Time</label>
+                                        <div class="pl-input-icon">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <input type="text" id="end-time" value="11:45 AM">
+                                        </div>
+                                    </div>
+                                    <div class="pl-field pl-field--full">
+                                        <label class="pl-label" for="task-desc">Task Description</label>
+                                        <textarea id="task-desc" class="pl-textarea" rows="3">Completed front brake pad replacement and full synthetic oil change. Inspected rotors, within spec.</textarea>
+                                    </div>
+                                </form>
+
+                                <div class="pl-card__foot">
+                                    <button type="button" class="pl-btn pl-btn--outline"><i class="fa-solid fa-circle-plus"></i> Record Labor</button>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Right column: summary -->
+                        <aside class="pl-col-right">
+                            <div class="pl-summary">
+                                <h2 class="pl-summary__title">Summary</h2>
+
+                                <dl class="pl-summary__rows">
+                                    <div class="pl-summary__row">
+                                        <dt>Total Parts Cost</dt>
+                                        <dd>$107.50</dd>
+                                    </div>
+                                    <div class="pl-summary__row">
+                                        <dt>Total Labor Hours</dt>
+                                        <dd>3.25 hrs</dd>
+                                    </div>
+                                    <div class="pl-summary__row">
+                                        <dt>Labor Rate (est)</dt>
+                                        <dd>$85.00/hr</dd>
+                                    </div>
+                                </dl>
+
+                                <div class="pl-total-box">
+                                    <span class="pl-total-box__label">Est. Total</span>
+                                    <span class="pl-total-box__value">$383.75</span>
+                                </div>
+
+                                <div class="pl-summary__actions">
+                                    <button type="button" class="pl-btn pl-btn--primary pl-btn--block"><i class="fa-solid fa-floppy-disk"></i> Save Record</button>
+                                    <button type="button" class="pl-btn pl-btn--soft pl-btn--block"><i class="fa-solid fa-paper-plane"></i> Notify Manager</button>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

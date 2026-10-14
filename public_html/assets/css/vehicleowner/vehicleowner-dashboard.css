@@ -1,0 +1,691 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Dashboard
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-navy: #00175c;
+    --vo-navy-bright: #00288e;
+    --vo-badge-bg: #e3e1ea;
+    --vo-radius-card: 12px;
+    --vo-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    --vo-kpi-vehicles-icon: #d4e3ff;
+    --vo-kpi-appointments-icon: #dde1ff;
+    --vo-kpi-approvals-bg: #ffdad6;
+    --vo-kpi-approvals-text: #93000a;
+    --vo-pill-bg: #d4e3ff;
+    --vo-pill-text: #56657c;
+    --vo-success-bg: #e6f4ea;
+    --vo-success-text: #137333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 32px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1280px;
+}
+
+/* ---------- Page header ---------- */
+.vo-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vo-header__text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header__text p {
+    margin: 4px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-body);
+}
+
+.vo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn--primary {
+    background: var(--vo-navy);
+    color: #ffffff;
+    box-shadow: var(--vo-shadow);
+}
+
+.vo-btn--soft {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 9px 12px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    color: var(--vo-text-dark);
+}
+
+/* ---------- KPI cards ---------- */
+.vo-kpis {
+    display: flex;
+    gap: 16px;
+}
+
+.vo-kpi {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vo-kpi__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.vo-kpi__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    font-size: 16px;
+    color: var(--vo-navy);
+}
+
+.vo-kpi__icon--vehicles {
+    background: var(--vo-kpi-vehicles-icon);
+}
+
+.vo-kpi__icon--appointments {
+    background: var(--vo-kpi-appointments-icon);
+}
+
+.vo-kpi__value {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.24px;
+    line-height: 32px;
+    color: var(--vo-navy);
+}
+
+.vo-kpi__label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: var(--vo-text-body);
+}
+
+.vo-kpi--repairs {
+    background: var(--vo-navy-bright);
+    border-color: var(--vo-navy);
+}
+
+.vo-kpi--repairs .vo-kpi__icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.vo-kpi--repairs .vo-kpi__value {
+    color: #ffffff;
+}
+
+.vo-kpi--repairs .vo-kpi__label {
+    color: #dde1ff;
+}
+
+.vo-kpi__glow {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 96px;
+    height: 96px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    filter: blur(12px);
+}
+
+.vo-kpi--approvals {
+    background: var(--vo-kpi-approvals-bg);
+}
+
+.vo-kpi--approvals .vo-kpi__icon {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--vo-kpi-approvals-text);
+}
+
+.vo-kpi--approvals .vo-kpi__value,
+.vo-kpi--approvals .vo-kpi__label {
+    color: var(--vo-kpi-approvals-text);
+}
+
+/* ---------- Main layout ---------- */
+.vo-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.vo-col-left,
+.vo-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+/* ---------- Panel (shared card look) ---------- */
+.vo-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    box-shadow: var(--vo-shadow);
+}
+
+.vo-panel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-panel__head h3,
+.vo-panel__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-panel__head h3 i,
+.vo-panel__title i {
+    font-size: 16px;
+    color: var(--vo-navy);
+}
+
+.vo-pill {
+    padding: 4px 12px;
+    background: var(--vo-pill-bg);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-pill-text);
+    white-space: nowrap;
+}
+
+.vo-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-navy);
+    text-decoration: none;
+}
+
+.vo-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Repair summary ---------- */
+.vo-repair-summary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.vo-repair-summary__img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    object-fit: cover;
+    background: #eeedf6;
+}
+
+.vo-repair-summary__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.vo-repair-summary__info h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--vo-text-dark);
+}
+
+.vo-repair-summary__info h4 span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--vo-text-body);
+}
+
+.vo-repair-summary__service {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--vo-navy);
+}
+
+.vo-repair-summary__eta {
+    margin: 4px 0 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Repair progress ---------- */
+.vo-progress {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+}
+
+.vo-progress__stages {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.vo-progress__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.vo-progress__stage p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--vo-text-body);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.vo-progress__stage--active p {
+    font-weight: 700;
+    color: var(--vo-navy);
+}
+
+.vo-progress__stage--pending p {
+    color: var(--vo-text-muted);
+}
+
+.vo-progress__dot {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 8px;
+    border-radius: 9999px;
+    background: var(--vo-navy);
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.vo-progress__dot--active {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 4px;
+    background: var(--vo-navy-bright);
+    box-shadow: 0 0 0 4px #dde1ff;
+    font-size: 13px;
+}
+
+.vo-progress__dot--empty {
+    background: var(--vo-badge-bg);
+    border: 2px solid var(--vo-border);
+}
+
+.vo-progress__track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 12px;
+    height: 8px;
+    background: var(--vo-badge-bg);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.vo-progress__fill {
+    height: 100%;
+    width: 50%;
+    background: var(--vo-navy);
+}
+
+/* ---------- Panel actions ---------- */
+.vo-panel__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.vo-panel__actions .vo-btn--soft {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+/* ---------- Invoices table ---------- */
+.vo-table-wrap {
+    overflow-x: auto;
+}
+
+.vo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vo-table th {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--vo-border);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--vo-text-body);
+    white-space: nowrap;
+}
+
+.vo-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--vo-border);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+    white-space: nowrap;
+}
+
+.vo-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.vo-table__id {
+    font-weight: 500;
+    color: var(--vo-navy);
+}
+
+.vo-table__num {
+    text-align: right;
+    font-weight: 500;
+}
+
+.vo-table__center {
+    text-align: center;
+}
+
+.vo-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 3.5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.vo-status--paid {
+    background: var(--vo-success-bg);
+    color: var(--vo-success-text);
+}
+
+/* ---------- Action required alerts ---------- */
+.vo-alerts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vo-alert {
+    padding: 13px 13px 15px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+}
+
+.vo-alert--danger {
+    background: var(--vo-kpi-approvals-bg);
+    border-color: var(--vo-kpi-approvals-bg);
+}
+
+.vo-alert__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.vo-alert__title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-dark);
+}
+
+.vo-alert--danger .vo-alert__title {
+    color: var(--vo-kpi-approvals-text);
+}
+
+.vo-alert__time {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--vo-text-body);
+}
+
+.vo-alert__desc {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-alert__action {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-decoration: underline;
+    color: var(--vo-navy);
+}
+
+.vo-alert__action--danger {
+    color: var(--vo-kpi-approvals-text);
+}
+
+/* ---------- Upcoming schedule ---------- */
+.vo-panel--schedule {
+    height: 278px;
+}
+
+.vo-schedule {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 26px;
+    list-style: none;
+    border-left: 2px solid var(--vo-border);
+}
+
+.vo-schedule__item {
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.vo-schedule__item:last-child {
+    padding-bottom: 0;
+}
+
+.vo-schedule__dot {
+    position: absolute;
+    top: 4px;
+    left: -35px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: var(--vo-navy);
+    box-shadow: 0 0 0 4px #ffffff;
+}
+
+.vo-schedule__dot--muted {
+    width: 12px;
+    height: 12px;
+    left: -33px;
+    background: var(--vo-text-muted);
+}
+
+.vo-schedule__time {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-navy);
+}
+
+.vo-schedule__time--muted {
+    color: var(--vo-text-muted);
+}
+
+.vo-schedule__vehicle {
+    margin: 4px 0 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-schedule__desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-schedule__item--muted .vo-schedule__vehicle,
+.vo-schedule__item--muted .vo-schedule__desc {
+    opacity: 0.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+    .vo-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vo-kpis {
+        flex-wrap: wrap;
+    }
+
+    .vo-kpi {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vo-kpis {
+        flex-direction: column;
+    }
+
+    .vo-kpi {
+        flex: 1 1 100%;
+    }
+
+    .vo-repair-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vo-panel--schedule {
+        height: auto;
+    }
+}

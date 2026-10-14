@@ -1,0 +1,506 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Service History
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-table-head-bg: #eeedf6;
+    --vo-gray-bg: #e3e1ea;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-navy: #00175c;
+    --vo-blue-pill-bg: #d4e3ff;
+    --vo-blue-pill-text: #56657c;
+    --vo-status-green-bg: #ecfdf5;
+    --vo-status-green-border: #a7f3d0;
+    --vo-status-green-text: #065f46;
+    --vo-status-blue-bg: #eff6ff;
+    --vo-status-blue-border: #bfdbfe;
+    --vo-status-blue-text: #1e40af;
+    --vo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --vo-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1280px;
+}
+
+/* ---------- Page header ---------- */
+.vo-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.24px;
+    line-height: 32px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Summary cards ---------- */
+.vo-summary-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.vo-summary-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 280px;
+    height: 128px;
+    padding: 17px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vo-summary-card::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 96px;
+    height: 96px;
+    border-radius: 9999px;
+    filter: blur(12px);
+}
+
+.vo-summary-card--navy::after {
+    background: rgba(0, 23, 92, 0.05);
+}
+
+.vo-summary-card--gray::after {
+    background: rgba(80, 95, 118, 0.05);
+}
+
+.vo-summary-card--amber::after {
+    background: rgba(97, 30, 0, 0.05);
+}
+
+.vo-summary-card__top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.vo-summary-card__label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-summary-card__top i {
+    font-size: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-summary-card__value {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-summary-card__value span {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: var(--vo-text-body);
+}
+
+.vo-summary-card__date {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--vo-text-dark);
+}
+
+.vo-summary-card__sub {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Table card ---------- */
+.vo-table-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid var(--vo-border);
+    border-radius: 12px;
+    box-shadow: var(--vo-shadow-card);
+    overflow: hidden;
+}
+
+.vo-table-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 16px 16px 17px;
+    background: var(--vo-table-head-bg);
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-table-card__head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-table-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vo-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 17px;
+    background: transparent;
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn {
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn--primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 16px;
+    background: var(--vo-navy);
+    color: #ffffff;
+    box-shadow: var(--vo-shadow-sm);
+}
+
+.vo-btn-outline i,
+.vo-btn--primary i {
+    font-size: 12px;
+}
+
+/* ---------- History table ---------- */
+.vo-table-wrap {
+    overflow-x: auto;
+}
+
+.vo-history-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.vo-history-table th {
+    padding: 12px;
+    background: var(--vo-panel);
+    border-bottom: 1px solid var(--vo-border);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    text-align: left;
+    color: var(--vo-text-body);
+    white-space: nowrap;
+}
+
+.vo-history-table th.vo-num {
+    text-align: right;
+}
+
+.vo-history-table td {
+    padding: 12px;
+    border-top: 1px solid var(--vo-border);
+    vertical-align: middle;
+}
+
+.vo-history-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.vo-cell-primary {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+}
+
+.vo-cell-primary--tight {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+}
+
+.vo-cell-secondary {
+    margin: 2px 0 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-cell-body {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-vehicle-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vo-vehicle-cell img {
+    width: 40px;
+    height: 32px;
+    flex-shrink: 0;
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: var(--vo-shadow-card);
+}
+
+.vo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: var(--vo-blue-pill-bg);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-blue-pill-text);
+    white-space: nowrap;
+}
+
+.vo-pill i {
+    font-size: 10px;
+}
+
+.vo-mechanic-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vo-mechanic-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: var(--vo-gray-bg);
+    color: var(--vo-text-body);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.vo-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 9999px;
+    border: 1px solid;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+.vo-status--completed {
+    background: var(--vo-status-green-bg);
+    border-color: var(--vo-status-green-border);
+    color: var(--vo-status-green-text);
+}
+
+.vo-status--warranty {
+    background: var(--vo-status-blue-bg);
+    border-color: var(--vo-status-blue-border);
+    color: var(--vo-status-blue-text);
+}
+
+.vo-row-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.vo-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+}
+
+.vo-icon-btn:hover {
+    background: var(--vo-panel);
+    color: var(--vo-navy);
+}
+
+/* ---------- Table footer / pagination ---------- */
+.vo-table-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 13px 12px 12px;
+    background: var(--vo-table-head-bg);
+    border-top: 1px solid var(--vo-border);
+}
+
+.vo-showing {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.vo-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+}
+
+.vo-page-btn--active {
+    background: var(--vo-navy);
+    color: #ffffff;
+}
+
+.vo-page-btn--nav {
+    color: var(--vo-text-body);
+    font-size: 11px;
+}
+
+.vo-page-btn--nav:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.vo-pagination__ellipsis {
+    padding: 0 4px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-summary-card {
+        flex: 1 1 100%;
+    }
+
+    .vo-table-card__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,6 @@
+# Uploaded files are runtime data, not source.
+*
+!.gitignore
+!.htaccess
+!repair-photos/
+repair-photos/*

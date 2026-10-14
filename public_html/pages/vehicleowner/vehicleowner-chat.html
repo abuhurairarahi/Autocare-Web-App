@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Chat</title>
+    <link rel="stylesheet" href="../../assets/css/vehicleowner/vehicleowner-chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/shared/vehicleowner-sidebar-topbar-style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name"><span style="color: #00175c;">Auto</span><span
+                        style="color: #fc4204;">Care</span></span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="vehicleowner-dashboard.html" class="nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="vehicleowner-vehicles.html" class="nav-item"><i class="fa-solid fa-car"></i> My Vehicles</a>
+                <a href="vehicleowner-book-appointment.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Service Appointments</a>
+                <a href="vehicleowner-repair-estimates.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> Repair Estimates</a>
+                <a href="vehicleowner-repair-tracking.html" class="nav-item"><i class="fa-solid fa-wrench"></i> Live Repair Tracking</a>
+                <a href="vehicleowner-service-history.html" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> Service History</a>
+                <a href="vehicleowner-invoices.html" class="nav-item"><i class="fa-solid fa-receipt"></i> Invoices</a>
+                <a href="vehicleowner-chat.html" class="nav-item active"><i class="fa-solid fa-comment"></i> Chat</a>
+                <a href="vehicleowner-notifications.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <section class="content">
+                <div class="vo-chat">
+
+                    <!-- Conversation list -->
+                    <aside class="vo-chat__sidebar">
+                        <div class="vo-chat__sidebar-head">
+                            <h2>Messages</h2>
+                            <div class="vo-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Search conversations...">
+                            </div>
+                        </div>
+                        <ul class="vo-conversations">
+                            <li>
+                                <button type="button" class="vo-conversation vo-conversation--active">
+                                    <span class="vo-avatar vo-avatar--md">
+                                        <img src="../../assets/images/chat-alex-carter.jpg" alt="Alex Carter">
+                                        <span class="vo-status-dot vo-status-dot--online"></span>
+                                    </span>
+                                    <span class="vo-conversation__body">
+                                        <span class="vo-conversation__row">
+                                            <span class="vo-conversation__name">Alex Carter</span>
+                                            <span class="vo-conversation__time">10:42 AM</span>
+                                        </span>
+                                        <span class="vo-conversation__preview">I&rsquo;ll have the technician look at the brakes.</span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="vo-conversation vo-conversation--unread">
+                                    <span class="vo-avatar vo-avatar--md">
+                                        <span class="vo-avatar__initials">SJ</span>
+                                        <span class="vo-status-dot vo-status-dot--away"></span>
+                                    </span>
+                                    <span class="vo-conversation__body">
+                                        <span class="vo-conversation__row">
+                                            <span class="vo-conversation__name">Sarah Jenkins</span>
+                                            <span class="vo-conversation__time vo-conversation__time--unread">Yesterday</span>
+                                        </span>
+                                        <span class="vo-conversation__row">
+                                            <span class="vo-conversation__preview vo-conversation__preview--unread">Your estimate is ready for review.</span>
+                                            <span class="vo-unread-count">2</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="vo-conversation vo-conversation--offline">
+                                    <span class="vo-avatar vo-avatar--md">
+                                        <img src="../../assets/images/chat-mike-davis.jpg" alt="Mike Davis" class="vo-avatar--desaturated">
+                                        <span class="vo-status-dot vo-status-dot--offline"></span>
+                                    </span>
+                                    <span class="vo-conversation__body">
+                                        <span class="vo-conversation__row">
+                                            <span class="vo-conversation__name">Mike Davis</span>
+                                            <span class="vo-conversation__time">Mon</span>
+                                        </span>
+                                        <span class="vo-conversation__preview">Parts arrived, starting work now.</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </aside>
+
+                    <!-- Main chat area -->
+                    <section class="vo-chat__main">
+                        <header class="vo-chat__header">
+                            <div class="vo-chat__header-who">
+                                <span class="vo-avatar vo-avatar--lg">
+                                    <img src="../../assets/images/chat-alex-carter.jpg" alt="Alex Carter">
+                                    <span class="vo-status-dot vo-status-dot--online"></span>
+                                </span>
+                                <div>
+                                    <div class="vo-chat__header-name">
+                                        <h1>Alex Carter</h1>
+                                        <span class="vo-role-badge">Service Manager</span>
+                                    </div>
+                                    <p class="vo-chat__header-meta"><i class="fa-solid fa-car"></i> Assigned: 2019 Toyota Tacoma (RO# 88492)</p>
+                                </div>
+                            </div>
+                            <div class="vo-chat__header-actions">
+                                <button type="button" class="icon-btn" aria-label="Call Alex Carter"><i class="fa-solid fa-phone"></i></button>
+                                <button type="button" class="icon-btn" aria-label="Conversation info"><i class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </header>
+
+                        <div class="vo-chat__feed">
+                            <div class="vo-date-divider"><span>Today, October 24</span></div>
+
+                            <div class="vo-message vo-message--other">
+                                <span class="vo-avatar vo-avatar--sm">
+                                    <img src="../../assets/images/chat-alex-carter.jpg" alt="Alex Carter">
+                                </span>
+                                <div class="vo-message__body">
+                                    <p class="vo-message__meta"><span class="vo-message__sender">Alex Carter</span> <span class="vo-message__time">10:15 AM</span></p>
+                                    <div class="vo-bubble vo-bubble--other">
+                                        <p>Hi there! We&rsquo;ve completed the initial inspection on your Tacoma. Everything looks good overall, but we noticed the front brake pads are getting a bit low.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vo-message vo-message--self">
+                                <div class="vo-message__body">
+                                    <p class="vo-message__meta"><span class="vo-message__time">10:22 AM</span> <span class="vo-message__sender">You</span></p>
+                                    <div class="vo-bubble vo-bubble--self">
+                                        <p>Thanks for the update, Alex. How much life is left on them? Do they need replacing today?</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vo-message vo-message--other">
+                                <span class="vo-avatar vo-avatar--sm">
+                                    <img src="../../assets/images/chat-alex-carter.jpg" alt="Alex Carter">
+                                </span>
+                                <div class="vo-message__body">
+                                    <p class="vo-message__meta"><span class="vo-message__sender">Alex Carter</span> <span class="vo-message__time">10:35 AM</span></p>
+                                    <div class="vo-bubble vo-bubble--other">
+                                        <p>They&rsquo;re at about 3mm. Usually, we recommend replacing them at this stage to avoid damaging the rotors. I&rsquo;ve attached a photo so you can see.</p>
+                                        <figure class="vo-attachment">
+                                            <img src="../../assets/images/chat-brake-pad-wear.jpg" alt="Close-up of worn brake pad measured with calipers showing 3mm thickness">
+                                            <span class="vo-attachment__overlay"><i class="fa-solid fa-expand"></i></span>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vo-message vo-message--self">
+                                <div class="vo-message__body">
+                                    <p class="vo-message__meta"><span class="vo-message__time">10:41 AM</span> <span class="vo-message__sender">You</span></p>
+                                    <div class="vo-bubble vo-bubble--self">
+                                        <p>Ah I see. Go ahead and replace them then. Please update the estimate.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vo-message vo-message--other">
+                                <span class="vo-avatar vo-avatar--sm">
+                                    <img src="../../assets/images/chat-alex-carter.jpg" alt="Alex Carter">
+                                </span>
+                                <div class="vo-message__body">
+                                    <p class="vo-message__meta"><span class="vo-message__sender">Alex Carter</span></p>
+                                    <div class="vo-bubble vo-bubble--other vo-bubble--typing" aria-label="Alex Carter is typing">
+                                        <span class="vo-typing-dot"></span>
+                                        <span class="vo-typing-dot"></span>
+                                        <span class="vo-typing-dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="vo-chat__input">
+                            <div class="vo-chat__input-row">
+                                <button type="button" class="icon-btn" aria-label="Attach a file"><i class="fa-solid fa-paperclip"></i></button>
+                                <button type="button" class="icon-btn" aria-label="Attach an image"><i class="fa-regular fa-image"></i></button>
+                                <textarea rows="1" placeholder="Type a message..." aria-label="Type a message"></textarea>
+                                <button type="submit" class="vo-send-btn" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                            <p class="vo-chat__input-hint">Press Enter to send, Shift + Enter for new line</p>
+                        </form>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare Mechanic - Assigned Jobs</title>
+    <link rel="stylesheet" href="../../assets/css/mechanic/mechanic-assigned-jobs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/shared/default-sidebar-topbar-style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="mechanic-dashboard.html" class="nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="mechanic-assigned-jobs.html" class="nav-item active"><i class="fa-solid fa-clipboard-list"></i> Assigned Jobs</a>
+                <a href="mechanic-workflow.html" class="nav-item"><i class="fa-solid fa-diagram-project"></i> Progress</a>
+                <a href="mechanic-parts-labor.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Parts &amp; Labor</a>
+                <a href="mechanic-repair-photos.html" class="nav-item"><i class="fa-solid fa-camera"></i> Update Photos</a>
+                <a href="mechanic-fault-report.html" class="nav-item"><i class="fa-solid fa-triangle-exclamation"></i> Report Faults</a>
+                <a href="mechanic-chat.html" class="nav-item"><i class="fa-solid fa-comments"></i> Chats</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <section class="content">
+
+                <!-- Page heading + filters -->
+                <div class="page-head">
+                    <div class="page-head__text">
+                        <h1>Assigned Jobs</h1>
+                        <p>Manage and track your current workshop queue.</p>
+                    </div>
+                    <div class="filters">
+                        <button class="filter-btn"><i class="fa-solid fa-filter"></i> Category</button>
+                        <button class="filter-btn"><i class="fa-solid fa-exclamation"></i> Priority</button>
+                        <button class="filter-btn"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort: Newest</button>
+                    </div>
+                </div>
+
+                <!-- Jobs table -->
+                <div class="table-card">
+                    <div class="table-scroll">
+                        <table class="jobs">
+                            <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Vehicle</th>
+                                    <th>Category</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th class="col-actions">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="job-id">#JC-8492</span></td>
+                                    <td>
+                                        <div class="vehicle-plate">XYZ-9823</div>
+                                        <div class="vehicle-model">2019 Ford Transit</div>
+                                    </td>
+                                    <td>Transmission</td>
+                                    <td><span class="pill pill--high">High</span></td>
+                                    <td><span class="pill pill--progress">In Progress</span></td>
+                                    <td class="col-actions">
+                                        <div class="row-actions">
+                                            <button class="btn btn--ghost">Details</button>
+                                            <a href="#" class="btn btn--primary">Resume</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="job-id">#JC-8493</span></td>
+                                    <td>
+                                        <div class="vehicle-plate">ABC-1234</div>
+                                        <div class="vehicle-model">2021 Chevy Silverado</div>
+                                    </td>
+                                    <td>Brakes</td>
+                                    <td><span class="pill pill--medium">Medium</span></td>
+                                    <td><span class="pill pill--parts">Awaiting Parts</span></td>
+                                    <td class="col-actions">
+                                        <div class="row-actions">
+                                            <button class="btn btn--ghost">Details</button>
+                                            <button class="btn btn--muted">Start</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="job-id">#JC-8494</span></td>
+                                    <td>
+                                        <div class="vehicle-plate">LMN-5678</div>
+                                        <div class="vehicle-model">2022 Toyota Tacoma</div>
+                                    </td>
+                                    <td>Scheduled Maint.</td>
+                                    <td><span class="pill pill--low">Low</span></td>
+                                    <td><span class="pill pill--ready">Ready</span></td>
+                                    <td class="col-actions">
+                                        <div class="row-actions">
+                                            <button class="btn btn--ghost">Details</button>
+                                            <a href="#" class="btn btn--primary">Start</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="job-id">#JC-8495</span></td>
+                                    <td>
+                                        <div class="vehicle-plate">PQR-9012</div>
+                                        <div class="vehicle-model">2018 RAM ProMaster</div>
+                                    </td>
+                                    <td>Electrical</td>
+                                    <td><span class="pill pill--high">High</span></td>
+                                    <td><span class="pill pill--ready">Ready</span></td>
+                                    <td class="col-actions">
+                                        <div class="row-actions">
+                                            <button class="btn btn--ghost">Details</button>
+                                            <a href="#" class="btn btn--primary">Start</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pager">
+                        <span class="pager__info">Showing 1 to 4 of 24 entries</span>
+                        <div class="pager__controls">
+                            <button class="pager__nav is-disabled" aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="pager__btn is-active">1</button>
+                            <button class="pager__btn">2</button>
+                            <button class="pager__btn">3</button>
+                            <button class="pager__nav" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare - Job Progress Tracking</title>
+  <link rel="stylesheet" href="../../assets/css/manager/Default-sidebar-topbar-style.css">
+  <link rel="stylesheet" href="../../assets/css/manager/manager-process-tracker.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="manager-dashboard.html" style="text-decoration: none;">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </a>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a class="nav-item" href="manager-dashboard.html">
+          <span class="icon"><i class="fa-solid fa-border-all"></i></span>Dashboard
+        </a>
+
+        <a class="nav-item" href="manager-booking-request.html">
+          <span class="icon"><i class="fa-regular fa-calendar-check"></i></span>Booking Requests
+        </a>
+
+        <a class="nav-item" href="manager-jobCards.html">
+          <span class="icon"><i class="fa-regular fa-clipboard"></i></span>Job Cards
+        </a>
+
+        <a class="nav-item" href="manager-mechanics.html">
+          <span class="icon"><i class="fa-solid fa-users-gear"></i></span>Mechanics
+        </a>
+
+        <a class="nav-item active" href="manager-process-tracker.html">
+          <span class="icon"><i class="fa-solid fa-list-check"></i></span>Job Tracking
+        </a>
+
+        <a class="nav-item" href="manager-cost-estimation.html">
+          <span class="icon"><i class="fa-solid fa-calculator"></i></span>Cost Estimates
+        </a>
+
+        <a class="nav-item" href="manager-invoice-management.html">
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Invoices
+        </a>
+
+        <a class="nav-item" href="manager-payment-approval.html">
+          <span class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>Spare Parts Approval
+        </a>
+
+        <a class="nav-item" href="manager-chat.html">
+          <span class="icon"><i class="fa-regular fa-comments"></i></span>Chats
+        </a>
+
+        <a class="nav-item" href="manager-performance.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>Report
+        </a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+      <!-- ================= CONTENT ================= -->
+      <section class="content">
+
+        <!-- Page Heading -->
+        <div class="page-heading">
+          <h1>Job Progress Tracking</h1>
+          <p>Drag and drop job cards to update their status.</p>
+        </div>
+
+        <!-- ================= KANBAN BOARD ================= -->
+        <div class="kanban-board">
+
+          <!-- COLUMN 1: PENDING -->
+          <div class="kanban-column">
+            <div class="column-header">
+              <div class="column-title">
+                <span class="status-dot dot-pending"></span>
+                <span>PENDING</span>
+              </div>
+              <span class="column-count">2</span>
+            </div>
+
+            <div class="column-body">
+              <!-- Card 1 -->
+              <div class="job-card">
+                <div class="card-header">
+                  <span class="job-id">#WO-2049</span>
+                  <span class="badge badge-high">High Priority</span>
+                </div>
+
+                <div class="card-body">
+                  <h3 class="vehicle-title">2021 Toyota Camry</h3>
+                  <p class="vin-text">VIN: 4T1B11HK5MU12345</p>
+                  
+                  <div class="customer-info">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Sarah Connor</span>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="assignee">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Unassigned</span>
+                  </div>
+                  <div class="due-date date-urgent">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Due Today</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: IN PROGRESS -->
+          <div class="kanban-column">
+            <div class="column-header">
+              <div class="column-title">
+                <span class="status-dot dot-progress"></span>
+                <span>IN PROGRESS</span>
+              </div>
+              <span class="column-count">1</span>
+            </div>
+
+            <div class="column-body">
+              <!-- Card 1 -->
+              <div class="job-card">
+                <div class="card-header">
+                  <span class="job-id">#WO-2051</span>
+                  <span class="badge badge-standard">Standard</span>
+                </div>
+
+                <div class="card-body">
+                  <h3 class="vehicle-title">2019 Ford F-150</h3>
+                  <p class="service-text">Brake Pad Replacement</p>
+                  
+                  <div class="progress-section">
+                    <div class="progress-info">
+                      <span>Progress</span>
+                      <span>60%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="assignee-avatar">
+                    <span class="avatar-circle">JD</span>
+                    <span>J. Doe</span>
+                  </div>
+                  <div class="due-date">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Tomorrow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: COMPLETED -->
+          <div class="kanban-column">
+            <div class="column-header">
+              <div class="column-title">
+                <span class="status-dot dot-completed"></span>
+                <span>COMPLETED</span>
+              </div>
+              <span class="column-count">0</span>
+            </div>
+
+            <div class="column-body empty-state-container">
+              <div class="empty-state">
+                <div class="empty-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <p>No completed jobs yet</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../../assets/js/manager/manager-store.js"></script>
+  <script src="../../assets/js/manager/manager-common.js"></script>
+  <script src="../../assets/js/manager/manager-process-tracker.js"></script>
+</body>
+</html>

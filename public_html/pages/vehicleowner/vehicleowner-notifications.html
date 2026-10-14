@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Notifications</title>
+    <link rel="stylesheet" href="../../assets/css/vehicleowner/vehicleowner-notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/shared/vehicleowner-sidebar-topbar-style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name"><span style="color: #00175c;">Auto</span><span
+                        style="color: #fc4204;">Care</span></span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="vehicleowner-dashboard.html" class="nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="vehicleowner-vehicles.html" class="nav-item"><i class="fa-solid fa-car"></i> My Vehicles</a>
+                <a href="vehicleowner-book-appointment.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Service Appointments</a>
+                <a href="vehicleowner-repair-estimates.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> Repair Estimates</a>
+                <a href="vehicleowner-repair-tracking.html" class="nav-item"><i class="fa-solid fa-wrench"></i> Live Repair Tracking</a>
+                <a href="vehicleowner-service-history.html" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> Service History</a>
+                <a href="vehicleowner-invoices.html" class="nav-item"><i class="fa-solid fa-receipt"></i> Invoices</a>
+                <a href="vehicleowner-chat.html" class="nav-item"><i class="fa-solid fa-comment"></i> Chat</a>
+                <a href="vehicleowner-notifications.html" class="nav-item active"><i class="fa-solid fa-bell"></i> Notifications</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <section class="content">
+                <div class="vo-wrap">
+
+                    <!-- Page header -->
+                    <div class="vo-header">
+                        <div class="vo-header__text">
+                            <h1>Notifications</h1>
+                            <p>Manage your workshop updates and alerts.</p>
+                        </div>
+                        <div class="vo-header__actions">
+                            <button type="button" class="vo-btn-outline"><i class="fa-solid fa-filter"></i> Filter</button>
+                            <button type="button" class="vo-btn vo-btn--mark-read"><i class="fa-solid fa-check-double"></i> Mark all as read</button>
+                        </div>
+                    </div>
+
+                    <!-- Filter chips -->
+                    <div class="vo-chips">
+                        <button type="button" class="vo-chip vo-chip--active">All Updates</button>
+                        <button type="button" class="vo-chip">Appointments</button>
+                        <button type="button" class="vo-chip">Billing</button>
+                        <button type="button" class="vo-chip">Repairs</button>
+                        <button type="button" class="vo-chip">Offers</button>
+                    </div>
+
+                    <!-- Notification groups -->
+                    <div class="vo-notif-groups">
+
+                        <section class="vo-notif-group">
+                            <div class="vo-notif-group__head">
+                                <h2>Today</h2>
+                                <span class="vo-count-badge">2 New</span>
+                            </div>
+                            <div class="vo-notif-list">
+                                <article class="vo-notification vo-notification--unread">
+                                    <span class="vo-notification__icon vo-notification__icon--navy"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>Vehicle Ready for Pickup</h3>
+                                            <span class="vo-notification__time">10:30 AM</span>
+                                        </div>
+                                        <p class="vo-notification__desc">Your 2019 Ford F-150 has completed its scheduled maintenance and is ready for pickup.</p>
+                                        <button type="button" class="vo-btn-outline vo-btn-outline--sm">View Details</button>
+                                    </div>
+                                    <span class="vo-unread-dot" aria-hidden="true"></span>
+                                </article>
+                                <article class="vo-notification vo-notification--unread">
+                                    <span class="vo-notification__icon vo-notification__icon--blue"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>New Estimate Received</h3>
+                                            <span class="vo-notification__time">8:15 AM</span>
+                                        </div>
+                                        <p class="vo-notification__desc">Estimate #EST-8492 for brake pad replacement has been uploaded to your account.</p>
+                                        <button type="button" class="vo-btn vo-btn--primary-sm">Review Estimate</button>
+                                    </div>
+                                    <span class="vo-unread-dot" aria-hidden="true"></span>
+                                </article>
+                            </div>
+                        </section>
+
+                        <section class="vo-notif-group">
+                            <div class="vo-notif-group__head">
+                                <h2>Yesterday</h2>
+                            </div>
+                            <div class="vo-notif-list">
+                                <article class="vo-notification">
+                                    <span class="vo-notification__icon vo-notification__icon--gray"><i class="fa-solid fa-wrench"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>Repair Started</h3>
+                                            <span class="vo-notification__time">2:45 PM</span>
+                                        </div>
+                                        <p class="vo-notification__desc">Technician Mike has started working on the transmission diagnostic for your Honda Civic.</p>
+                                    </div>
+                                </article>
+                                <article class="vo-notification">
+                                    <span class="vo-notification__icon vo-notification__icon--orange"><i class="fa-solid fa-comment"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>New Message from Service Advisor</h3>
+                                            <span class="vo-notification__time">11:20 AM</span>
+                                        </div>
+                                        <p class="vo-notification__desc">&ldquo;Hi! We noticed your air filter needs replacing. Would you like us to add that to the current work order?&rdquo;</p>
+                                        <button type="button" class="vo-btn-outline vo-btn-outline--sm">Reply</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+                        <section class="vo-notif-group">
+                            <div class="vo-notif-group__head">
+                                <h2>Earlier This Week</h2>
+                            </div>
+                            <div class="vo-notif-list">
+                                <article class="vo-notification">
+                                    <span class="vo-notification__icon vo-notification__icon--gray"><i class="fa-solid fa-calendar-check"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>Appointment Confirmed</h3>
+                                            <span class="vo-notification__time">Mon, Oct 24</span>
+                                        </div>
+                                        <p class="vo-notification__desc">Your service appointment for Oct 26 at 9:00 AM is confirmed.</p>
+                                    </div>
+                                </article>
+                                <article class="vo-notification">
+                                    <span class="vo-notification__icon vo-notification__icon--gray"><i class="fa-solid fa-receipt"></i></span>
+                                    <div class="vo-notification__body">
+                                        <div class="vo-notification__row">
+                                            <h3>Invoice Paid</h3>
+                                            <span class="vo-notification__time">Sun, Oct 23</span>
+                                        </div>
+                                        <p class="vo-notification__desc">Payment of $425.50 for Invoice #INV-8490 was successful. Thank you!</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+                        <div class="vo-load-more">
+                            <button type="button" class="vo-btn-pill">Load More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>

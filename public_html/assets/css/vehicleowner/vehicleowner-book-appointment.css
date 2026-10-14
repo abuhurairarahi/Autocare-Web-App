@@ -1,0 +1,544 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Book Service Appointment
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-input-bg: #eeedf6;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-placeholder: #6b7280;
+    --vo-navy: #00175c;
+    --vo-navy-tint: rgba(221, 225, 255, 0.2);
+    --vo-badge-blue-bg: #d4e3ff;
+    --vo-badge-blue-text: #56657c;
+    --vo-badge-gray-bg: #e3e1ea;
+    --vo-badge-gray-text: #444652;
+    --vo-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.05);
+    --vo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --vo-radius-card: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1280px;
+}
+
+.vo-form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* ---------- Page header ---------- */
+.vo-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Form layout ---------- */
+.vo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vo-step-row {
+    display: flex;
+    gap: 16px;
+}
+
+.vo-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 12px;
+    padding: 25px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    box-shadow: var(--vo-shadow-sm);
+}
+
+.vo-field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-field-label i {
+    font-size: 16px;
+    color: var(--vo-navy);
+}
+
+/* ---------- Selects ---------- */
+.vo-select-wrap {
+    position: relative;
+    display: flex;
+}
+
+.vo-select-wrap select {
+    width: 100%;
+    padding: 13px 41px 13px 13px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+    appearance: none;
+    cursor: pointer;
+}
+
+.vo-select-chevron {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: var(--vo-text-muted);
+    pointer-events: none;
+}
+
+/* ---------- Step 2: service details card ---------- */
+.vo-card--split {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+}
+
+.vo-card__top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 24px 25px;
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-card__bottom {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-categories {
+    display: flex;
+    gap: 16px;
+}
+
+.vo-category {
+    position: relative;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 17px;
+    background: transparent;
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.vo-category input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.vo-category__icon {
+    font-size: 22px;
+    color: var(--vo-text-dark);
+}
+
+.vo-category__label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-dark);
+}
+
+.vo-category:has(input:checked) {
+    background: var(--vo-navy-tint);
+    border-color: var(--vo-navy);
+}
+
+/* ---------- Date / time fields ---------- */
+.vo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.vo-field__label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-input {
+    width: 100%;
+    padding: 13px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+}
+
+/* ---------- Step 3: description + upload ---------- */
+.vo-textarea {
+    width: 100%;
+    padding: 13px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+    resize: vertical;
+}
+
+.vo-textarea::placeholder {
+    color: var(--vo-placeholder);
+}
+
+.vo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 36px 26px 29px;
+    background: var(--vo-page-bg);
+    border: 2px dashed var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    cursor: pointer;
+    text-align: center;
+}
+
+.vo-upload i {
+    font-size: 26px;
+    color: var(--vo-text-dark);
+}
+
+.vo-upload__title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-dark);
+}
+
+.vo-upload__hint {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Actions ---------- */
+.vo-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.vo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn i {
+    font-size: 13px;
+}
+
+.vo-btn--soft {
+    padding: 15.5px 25px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    color: var(--vo-text-dark);
+}
+
+.vo-btn--primary {
+    padding: 12px 24px;
+    background: var(--vo-navy);
+    color: #ffffff;
+    box-shadow: var(--vo-shadow-sm);
+}
+
+/* ---------- Right column ---------- */
+.vo-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 0 0 320px;
+    width: 320px;
+}
+
+.vo-upcoming {
+    display: flex;
+    flex-direction: column;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    box-shadow: var(--vo-shadow-card);
+    overflow: hidden;
+}
+
+.vo-upcoming__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 17px;
+    background: var(--vo-badge-gray-bg);
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-upcoming__head h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-upcoming__head i {
+    font-size: 18px;
+    color: var(--vo-text-dark);
+}
+
+.vo-upcoming__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.vo-upcoming__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 16px 17px;
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-upcoming__item--last {
+    border-bottom: none;
+}
+
+.vo-upcoming__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.vo-tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.vo-tag--confirmed {
+    background: var(--vo-badge-blue-bg);
+    color: var(--vo-badge-blue-text);
+}
+
+.vo-tag--pending {
+    background: var(--vo-badge-gray-bg);
+    color: var(--vo-badge-gray-text);
+}
+
+.vo-upcoming__time {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-upcoming__item h4 {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+}
+
+.vo-upcoming__location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-upcoming__location i {
+    font-size: 10px;
+    color: var(--vo-text-muted);
+}
+
+.vo-upcoming__footer {
+    display: block;
+    padding: 18.5px 12px 14.5px;
+    background: var(--vo-page-bg);
+    border-top: 1px solid var(--vo-border);
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-navy);
+}
+
+.vo-upcoming__footer:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Promo card ---------- */
+.vo-promo {
+    position: relative;
+    height: 192px;
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    box-shadow: var(--vo-shadow-card);
+    overflow: hidden;
+}
+
+.vo-promo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vo-promo__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(26, 27, 34, 0.8), rgba(26, 27, 34, 0));
+}
+
+.vo-promo__overlay h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.vo-promo__overlay p {
+    margin: 4px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #e9e7f0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+    .vo-wrap {
+        flex-direction: column;
+    }
+
+    .vo-aside {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-step-row,
+    .vo-card__bottom,
+    .vo-categories {
+        flex-direction: column;
+    }
+
+    .vo-actions {
+        justify-content: stretch;
+    }
+
+    .vo-actions .vo-btn {
+        flex: 1 1 0;
+        justify-content: center;
+    }
+}

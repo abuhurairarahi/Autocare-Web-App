@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f5f9;
+    color: #172033;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* MAIN APP LAYOUT */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* MAIN SECTION*/
+
+.main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    background: #f4f5f9;
+}
+
+/* CONTENT AREA */
+
+.content {
+    padding: 28px 32px 40px;
+}
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.page-heading h1 {
+    font-size: 26px;
+    line-height: 1.2;
+    color: #172033;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-heading p {
+    font-size: 13px;
+    color: #717888;
+}
+
+/* KANBAN BOARD */
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.kanban-column {
+    background: #edf0f5;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 680px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 4px 14px 4px;
+}
+
+.column-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #333b4d;
+    letter-spacing: 0.5px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-pending {
+    background: #eab308;
+}
+
+.dot-progress {
+    background: #2563eb;
+}
+
+.dot-completed {
+    background: #00288e;
+}
+
+.column-count {
+    font-size: 11px;
+    color: #717888;
+    font-weight: 600;
+}
+
+.column-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+/* JOB CARD STYLES */
+
+.job-card {
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e1e4ea;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job-id {
+    font-size: 11px;
+    color: #717888;
+    font-weight: 600;
+}
+
+/* Badges */
+
+.badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+.badge-high {
+    background: #fde8e8;
+    color: #e02424;
+}
+
+.badge-standard {
+    background: #f1f3f7;
+    color: #4b5563;
+}
+
+/* Card Body */
+
+.vehicle-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #172033;
+    margin-bottom: 4px;
+}
+
+.vin-text {
+    font-size: 11px;
+    color: #8b93a7;
+    margin-bottom: 12px;
+}
+
+.service-text {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #4b5563;
+}
+
+.customer-info svg {
+    width: 14px;
+    height: 14px;
+    stroke: #8b93a7;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Progress Bar */
+
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #717888;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #0256d5;
+    border-radius: 3px;
+}
+
+/* Card Footer */
+
+.card-footer {
+    border-top: 1px solid #f0f1f5;
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.assignee {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #717888;
+}
+
+.assignee svg {
+    width: 13px;
+    height: 13px;
+    stroke: #9ca3af;
+    fill: none;
+    stroke-width: 2;
+}
+
+.assignee-avatar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #333b4d;
+    font-weight: 600;
+}
+
+.avatar-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.due-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #717888;
+}
+
+.due-date svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
+.due-date.date-urgent {
+    color: #dc2626;
+}
+
+/* EMPTY STATE STYLES */
+
+.empty-state-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #9ca3af;
+    padding: 40px 0;
+}
+
+.empty-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #9ca3af;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.empty-state p {
+    font-size: 12px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1100px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+
+    .kanban-column {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .main {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+}
+
+@media (max-width: 700px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+}

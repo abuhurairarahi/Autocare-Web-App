@@ -1,0 +1,378 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Notifications
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-input-bg: #eeedf6;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-navy: #00175c;
+    --vo-navy-bright: #00288e;
+    --vo-badge-blue-bg: #d4e3ff;
+    --vo-badge-blue-text: #56657c;
+    --vo-orange-bg: #ffdbce;
+    --vo-orange-icon: #c2410c;
+    --vo-unread-border: rgba(0, 23, 92, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 896px;
+}
+
+/* ---------- Page header ---------- */
+.vo-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vo-header__text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header__text p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vo-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 17px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-dark);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn-outline--sm {
+    padding: 5px 13px;
+    background: transparent;
+    color: var(--vo-text-body);
+}
+
+.vo-btn {
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn--mark-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--vo-badge-blue-bg);
+    color: var(--vo-badge-blue-text);
+}
+
+.vo-btn--primary-sm {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--vo-navy);
+    color: #ffffff;
+}
+
+.vo-header__actions i,
+.vo-btn-outline i {
+    font-size: 11px;
+}
+
+/* ---------- Filter chips ---------- */
+.vo-chips {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.vo-chip {
+    flex-shrink: 0;
+    padding: 7px 17px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-chip--active {
+    padding: 6px 16px;
+    background: var(--vo-navy);
+    border: none;
+    color: #ffffff;
+}
+
+/* ---------- Notification groups ---------- */
+.vo-notif-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 8px;
+}
+
+.vo-notif-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vo-notif-group__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-notif-group__head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-count-badge {
+    padding: 4px 8px;
+    background: var(--vo-input-bg);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--vo-text-body);
+}
+
+.vo-notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ---------- Notification card ---------- */
+.vo-notification {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    padding: 17px;
+    background: #ffffff;
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+}
+
+.vo-notification--unread {
+    background: var(--vo-panel);
+    border-color: var(--vo-unread-border);
+    padding-left: 33px;
+}
+
+.vo-unread-dot {
+    position: absolute;
+    top: 24px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--vo-navy);
+}
+
+.vo-notification__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    font-size: 20px;
+}
+
+.vo-notification__icon--navy {
+    background: var(--vo-navy-bright);
+    color: #ffffff;
+}
+
+.vo-notification__icon--blue {
+    background: var(--vo-badge-blue-bg);
+    color: var(--vo-navy);
+    font-size: 18px;
+}
+
+.vo-notification__icon--gray {
+    background: var(--vo-input-bg);
+    color: var(--vo-text-body);
+    font-size: 18px;
+}
+
+.vo-notification__icon--orange {
+    background: var(--vo-orange-bg);
+    color: var(--vo-orange-icon);
+    font-size: 18px;
+}
+
+.vo-notification__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.vo-notification__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.vo-notification__row h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-notification--unread .vo-notification__row h3 {
+    font-weight: 600;
+}
+
+.vo-notification:not(.vo-notification--unread) .vo-notification__row h3 {
+    font-weight: 400;
+}
+
+.vo-notification__time {
+    flex-shrink: 0;
+    padding-left: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--vo-text-body);
+    white-space: nowrap;
+}
+
+.vo-notification__desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-notification__body .vo-btn-outline--sm,
+.vo-notification__body .vo-btn--primary-sm {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+/* ---------- Load more ---------- */
+.vo-load-more {
+    display: flex;
+    justify-content: center;
+}
+
+.vo-btn-pill {
+    padding: 9px 25px;
+    background: var(--vo-page-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vo-notification {
+        flex-direction: column;
+    }
+
+    .vo-notification--unread {
+        padding-left: 17px;
+    }
+
+    .vo-unread-dot {
+        top: 17px;
+        left: 17px;
+    }
+
+    .vo-notification__row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .vo-notification__time {
+        padding-left: 0;
+    }
+}

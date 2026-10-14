@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare - Cost Estimates</title>
+  <link rel="stylesheet" href="../../assets/css/manager/Default-sidebar-topbar-style.css">
+  <link rel="stylesheet" href="../../assets/css/manager/manager-cost-estimation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="manager-dashboard.html" style="text-decoration: none;">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </a>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a class="nav-item" href="manager-dashboard.html">
+          <span class="icon"><i class="fa-solid fa-border-all"></i></span>Dashboard
+        </a>
+
+        <a class="nav-item" href="manager-booking-request.html">
+          <span class="icon"><i class="fa-regular fa-calendar-check"></i></span>Booking Requests
+        </a>
+
+        <a class="nav-item" href="manager-jobCards.html">
+          <span class="icon"><i class="fa-regular fa-clipboard"></i></span>Job Cards
+        </a>
+
+        <a class="nav-item" href="manager-mechanics.html">
+          <span class="icon"><i class="fa-solid fa-users-gear"></i></span>Mechanics
+        </a>
+
+        <a class="nav-item" href="manager-process-tracker.html">
+          <span class="icon"><i class="fa-solid fa-list-check"></i></span>Job Tracking
+        </a>
+
+        <a class="nav-item active" href="manager-cost-estimation.html">
+          <span class="icon"><i class="fa-solid fa-calculator"></i></span>Cost Estimates
+        </a>
+
+        <a class="nav-item" href="manager-invoice-management.html">
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Invoices
+        </a>
+
+        <a class="nav-item" href="manager-payment-approval.html">
+          <span class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>Spare Parts Approval
+        </a>
+
+        <a class="nav-item" href="manager-chat.html">
+          <span class="icon"><i class="fa-regular fa-comments"></i></span>Chats
+        </a>
+
+        <a class="nav-item" href="manager-performance.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>Report
+        </a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- ================= CONTENT ================= -->
+      <section class="content">
+
+        <!-- GRID LAYOUT -->
+        <div class="estimates-grid">
+
+          <!-- Left Main Table Panel -->
+          <div class="panel table-panel">
+            <div class="page-heading">
+              <div>
+                <h1>Cost Estimates</h1>
+                <p>Manage and track repair cost estimates.</p>
+              </div>
+              <button class="btn-primary">
+                <span>+</span> New Estimate
+              </button>
+            </div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ESTIMATE ID</th>
+                    <th>JOB CARD</th>
+                    <th>CUSTOMER</th>
+                    <th>MECHANIC</th>
+                    <th>TOTAL COST</th>
+                    <th>STATUS</th>
+                    <th>SENT DATE</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <!-- Row 1 Selected -->
+                  <tr class="selected">
+                    <td class="bold">EST-2023-001</td>
+                    <td class="blue-link">JC-1042</td>
+                    <td>Acme Corp Logistics</td>
+                    <td>John Doe</td>
+                    <td class="bold">৳3,450.00</td>
+                    <td><span class="badge badge-draft">Mechanic Draft</span></td>
+                    <td>-</td>
+                    <td class="action-cell">
+                      <button class="icon-btn">
+                        <svg viewBox="0 0 24 24">
+                          <circle cx="12" cy="5" r="1.5"></circle>
+                          <circle cx="12" cy="12" r="1.5"></circle>
+                          <circle cx="12" cy="19" r="1.5"></circle>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr>
+                    <td class="bold">EST-2023-002</td>
+                    <td class="blue-link">JC-1043</td>
+                    <td>Global Freight Inc.</td>
+                    <td>-</td>
+                    <td class="bold">৳1,200.50</td>
+                    <td><span class="badge badge-sent">Sent</span></td>
+                    <td>Oct 12, 2023</td>
+                    <td class="action-cell">
+                      <button class="icon-btn">
+                        <svg viewBox="0 0 24 24">
+                          <circle cx="12" cy="5" r="1.5"></circle>
+                          <circle cx="12" cy="12" r="1.5"></circle>
+                          <circle cx="12" cy="19" r="1.5"></circle>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr>
+                    <td class="bold">EST-2023-003</td>
+                    <td class="blue-link">JC-1039</td>
+                    <td>City Transit Auth.</td>
+                    <td>-</td>
+                    <td class="bold">৳8,900.00</td>
+                    <td><span class="badge badge-send">Send to Customer</span></td>
+                    <td>Oct 10, 2023</td>
+                    <td class="action-cell">
+                      <button class="icon-btn">
+                        <svg viewBox="0 0 24 24">
+                          <circle cx="12" cy="5" r="1.5"></circle>
+                          <circle cx="12" cy="12" r="1.5"></circle>
+                          <circle cx="12" cy="19" r="1.5"></circle>
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right Estimate Builder Panel -->
+          <div class="panel builder-panel">
+
+            <div class="builder-header">
+              <div>
+                <h2>Estimate Builder</h2>
+                <span class="builder-subtitle">EST-2023-001 (DRAFT)</span>
+              </div>
+              <button class="close-btn">&times;</button>
+            </div>
+
+            <!-- Mechanic Info Banner -->
+            <div class="info-banner">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Initial Estimate by: John Doe (Mechanic)</span>
+            </div>
+
+            <!-- Linked Job Card -->
+            <div class="linked-card-section">
+              <label class="section-label">Linked Job Card</label>
+              <div class="linked-card-box">
+                <svg viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span>JC-1042 - Engine Overhaul</span>
+              </div>
+            </div>
+
+            <!-- Line Items Header -->
+            <div class="line-items-header">
+              <span class="section-label">Line Items</span>
+              <button class="add-item-btn">
+                <span>⊕</span> Add Item
+              </button>
+            </div>
+
+            <!-- Line Items List -->
+            <div class="line-items-list">
+              <!-- Item 1 -->
+              <div class="item-card">
+                <div class="item-info">
+                  <h4>Diagnostic Labor</h4>
+                  <small>3 hrs @ ৳150/hr</small>
+                </div>
+                <div class="item-price">৳450.00</div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="item-card">
+                <div class="item-info">
+                  <h4>Transmission Kit (OEM)</h4>
+                  <small>1 unit @ ৳2,800</small>
+                </div>
+                <div class="item-price">৳2,800.00</div>
+              </div>
+            </div>
+
+            <!-- Add Item Form Box -->
+            <div class="add-item-form">
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" placeholder="e.g. Labor, Part Name">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Qty / Hrs</label>
+                  <input type="text" value="1">
+                </div>
+                <div class="form-group">
+                  <label>Unit Price</label>
+                  <input type="text" value="0.00">
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-save-item">Save Item</button>
+              </div>
+            </div>
+
+            <!-- Totals Calculation -->
+            <div class="totals-section">
+              <div class="total-row">
+                <span>Subtotal</span>
+                <span>৳3,250.00</span>
+              </div>
+              <div class="total-row">
+                <span>Tax (8.5%)</span>
+                <span>৳276.25</span>
+              </div>
+              <div class="grand-total-row">
+                <span class="grand-label">Grand Total</span>
+                <span class="grand-price">৳3,526.25</span>
+              </div>
+            </div>
+
+            <!-- Panel Action Buttons -->
+            <div class="builder-actions">
+              <button class="btn-secondary">Save Draft</button>
+              <button class="btn-primary-send">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Send to Customer
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../../assets/js/manager/manager-store.js"></script>
+  <script src="../../assets/js/manager/manager-common.js"></script>
+  <script src="../../assets/js/manager/manager-cost-estimation.js"></script>
+</body>
+
+</html>

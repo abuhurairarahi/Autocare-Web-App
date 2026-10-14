@@ -1,0 +1,253 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare Admin - Workshop Managers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/css/admin/workshop-managers.css">
+  <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </div>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+          Dashboard</a>
+        <a href="workshop-managers.html" class="nav-item active"><i class="fa-solid fa-user-gear"></i> Workshop
+          Managers</a>
+        <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+          Mechanics</a>
+        <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+          Owners</a>
+        <a href="service-categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Service
+          Categories</a>
+        <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+          Parts Inventory</a>
+        <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+        <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+          Revenue Reports</a>
+        <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+        <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service Broadcast</a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+              </path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <div class="content-body">
+        <div class="page-header">
+          <div>
+            <h1>Workshop Managers</h1>
+            <p class="subtitle">Manage and monitor workshop administrator accounts.</p>
+          </div>
+          <button class="btn btn-primary" id="add-manager-btn" data-wired="true">+ Add Manager</button>
+        </div>
+
+        <section class="card">
+          <div class="toolbar">
+            <div class="filter-input">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Filter by name or ID...">
+            </div>
+            <div class="filter">
+              <select name="filter-status" id="status-filter">
+                <option value="All">All</option>
+                <option value="Approved">Approved</option>
+                <option value="Suspended">Suspended</option>
+              </select>
+            </div>
+            <button class="btn btn-outline toolbar-export" id="export-managers-btn" data-wired="true">⭳ Export</button>
+          </div>
+
+          <table class="managers-table">
+            <thead>
+              <tr>
+                <th>Manager ID</th>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Assigned Workshop</th>
+                <th>Status</th>
+                <th>Joining Date</th>
+                <th class="col-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="manager-tbody">
+              <!-- JS will populate rows here -->
+            </tbody>
+          </table>
+
+          <div class="table-footer">
+            <span class="entries-info">Showing 1 to 3 of 24 entries</span>
+            <div class="pagination">
+              <button class="page-btn" aria-label="Previous">‹</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <span class="page-dots">…</span>
+              <button class="page-btn" aria-label="Next">›</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <!-- Add Manager Modal -->
+  <div class="modal-overlay" id="add-manager-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Add Workshop Manager</h2>
+        <button class="modal-close" id="close-modal-btn">&times;</button>
+      </div>
+      <form id="add-manager-form">
+        <div class="form-group">
+          <label for="manager-name">Name</label>
+          <input type="text" id="manager-name" required placeholder="Enter full name">
+        </div>
+        <div class="form-group">
+          <label for="manager-email">Email</label>
+          <input type="email" id="manager-email" required placeholder="Enter email address">
+        </div>
+        <div class="form-group">
+          <label for="manager-phone">Phone</label>
+          <input type="tel" id="manager-phone" required placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+          <label for="manager-workshop">Assigned Workshop</label>
+          <select id="manager-workshop" required>
+            <option value="">Select a workshop...</option>
+            <option value="Central Hub">Central Hub</option>
+            <option value="Downtown Hub">Downtown Hub</option>
+            <option value="Uptown Hub">Uptown Hub</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="manager-status">Status</label>
+          <select id="manager-status" required>
+            <option value="Approved">Approved</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="manager-joining-date">Joining Date</label>
+          <input type="date" id="manager-joining-date" required readonly style="background: #f4f2fc;">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Update Manager Modal -->
+  <div class="modal-overlay" id="update-manager-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Update Workshop Manager</h2>
+        <button class="modal-close" id="close-update-modal-btn">&times;</button>
+      </div>
+      <form id="update-manager-form">
+        <input type="hidden" id="update-manager-row-index">
+        <div class="form-group">
+          <label for="update-manager-name">Name</label>
+          <input type="text" id="update-manager-name" required placeholder="Enter full name">
+        </div>
+        <div class="form-group">
+          <label for="update-manager-email">Email</label>
+          <input type="email" id="update-manager-email" required placeholder="Enter email address">
+        </div>
+        <div class="form-group">
+          <label for="update-manager-phone">Phone</label>
+          <input type="tel" id="update-manager-phone" required placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+          <label for="update-manager-workshop">Assigned Workshop</label>
+          <select id="update-manager-workshop" required>
+            <option value="">Select a workshop...</option>
+            <option value="Dhaka Branch">Dhaka Branch</option>
+            <option value="Central Hub">Central Hub</option>
+            <option value="Downtown Hub">Downtown Hub</option>
+            <option value="Uptown Hub">Uptown Hub</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="update-manager-status">Status</label>
+          <select id="update-manager-status" required>
+            <option value="Approved">Approved</option>
+            <option value="Pending">Pending</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="update-manager-joining-date">Joining Date</label>
+          <input type="text" id="update-manager-joining-date" required>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancel-update-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../assets/js/admin/workshop-managers.js"></script>
+  <script src="../../assets/js/admin/admin-common.js"></script>
+</body>
+
+</html>
