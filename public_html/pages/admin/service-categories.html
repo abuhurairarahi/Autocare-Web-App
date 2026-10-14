@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Service Categories</title>
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="../../assets/css/admin/service-categories.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item active"><i class="fa-solid fa-layer-group"></i>
+                    Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service
+                    Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Dashboard Container -->
+            <div class="content-body">
+                <div class="page-header-row">
+                    <div class="page-title-container">
+                        <h1>Service Categories</h1>
+                        <p>Manage and organize workshop service offerings.</p>
+                    </div>
+                    <div class="page-controls">
+                        <select class="btn btn-secondary" id="filter-status" style="outline:none; cursor:pointer;">
+                            <option value="All">Filter: All</option>
+                            <option value="Recently Added">Recently Added</option>
+                            <option value="Active">Active</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Suspended">Suspended</option>
+                        </select>
+                        <button class="btn btn-primary" id="add-category-btn">
+                            <i class="fa-solid fa-plus"></i> Add Category
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Cards Grid -->
+                <div class="cards-grid" id="cards-grid">
+                    <!-- Cards will be dynamically loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Category Modal -->
+    <div class="modal-overlay" id="category-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Category</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form id="category-form">
+                <input type="hidden" name="id" id="category-id">
+                <div class="form-group">
+                    <label>Category Name</label>
+                    <input type="text" name="name" id="category-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Description</label>
+                    <textarea name="description" id="category-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Base Price (&#2547;)</label>
+                    <input type="number" name="base_price" id="category-price" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select name="status" id="category-status" required>
+                        <option value="Active">Active</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Suspended">Suspended</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-modal-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../assets/js/admin/admin.js"></script>
+    <script src="../../assets/js/admin/service-categories.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare Manager Job Cards</title>
+  <link rel="stylesheet" href="../../assets/css/manager/Default-sidebar-topbar-style.css">
+  <link rel="stylesheet" href="../../assets/css/manager/manager-jobCards.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="manager-dashboard.html" style="text-decoration: none;">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </a>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a class="nav-item" href="manager-dashboard.html">
+          <span class="icon"><i class="fa-solid fa-border-all"></i></span>Dashboard
+        </a>
+
+        <a class="nav-item" href="manager-booking-request.html">
+          <span class="icon"><i class="fa-regular fa-calendar-check"></i></span>Booking Requests
+        </a>
+
+        <a class="nav-item active" href="manager-jobCards.html">
+          <span class="icon"><i class="fa-regular fa-clipboard"></i></span>Job Cards
+        </a>
+
+        <a class="nav-item" href="manager-mechanics.html">
+          <span class="icon"><i class="fa-solid fa-users-gear"></i></span>Mechanics
+        </a>
+
+        <a class="nav-item" href="manager-process-tracker.html">
+          <span class="icon"><i class="fa-solid fa-list-check"></i></span>Job Tracking
+        </a>
+
+        <a class="nav-item" href="manager-cost-estimation.html">
+          <span class="icon"><i class="fa-solid fa-calculator"></i></span>Cost Estimates
+        </a>
+
+        <a class="nav-item" href="manager-invoice-management.html">
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Invoices
+        </a>
+
+        <a class="nav-item" href="manager-payment-approval.html">
+          <span class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>Spare Parts Approval
+        </a>
+
+        <a class="nav-item" href="manager-chat.html">
+          <span class="icon"><i class="fa-regular fa-comments"></i></span>Chats
+        </a>
+
+        <a class="nav-item" href="manager-performance.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>Report
+        </a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- ================= CONTENT ================= -->
+      <section class="content">
+
+        <!-- Page Heading -->
+        <div class="page-heading">
+          <div>
+            <h1>Job Cards</h1>
+            <p>Manage and track active repair orders</p>
+          </div>
+
+          <div class="heading-actions">
+           <div class="status-filter">
+              <select name="status" class="dropdown">
+                <option value="all">All Statuses</option>
+                <option value="In-Progress">In Progress</option>
+                <option value="Awaiting-Parts">Awaiting Parts</option>
+                <option value="Quality-Control">Quality Control</option>
+              </select>
+           </div>
+            <button class="create-btn">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Create New Job Card
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= STAT CARDS ================= -->
+        <div class="stats">
+          <!-- Total Active -->
+          <article class="stat-card">
+            <div class="stat-top">
+              <div class="stat-title">TOTAL ACTIVE</div>
+              <div class="stat-icon blue-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+            </div>
+            <strong id="stat-total-active">42</strong>
+            <p class="stat-success">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              +12% from last week
+            </p>
+          </article>
+
+          <!-- Awaiting Parts -->
+          <article class="stat-card">
+            <div class="stat-top">
+              <div class="stat-title">AWAITING PARTS</div>
+              <div class="stat-icon red-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+              </div>
+            </div>
+            <strong id="stat-awaiting-parts">8</strong>
+            <p class="stat-warning">3 critical items delayed</p>
+          </article>
+
+          <!-- Quality Control -->
+          <article class="stat-card">
+            <div class="stat-top">
+              <div class="stat-title">QUALITY CONTROL</div>
+              <div class="stat-icon light-blue-icon">
+                <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              </div>
+            </div>
+            <strong id="stat-quality-control">15</strong>
+            <p class="stat-warning">Requires mechanic sign-off</p>
+          </article>
+
+          <!-- Completed -->
+          <article class="stat-card">
+            <div class="stat-top">
+              <div class="stat-title">COMPLETED (TODAY)</div>
+              <div class="stat-icon green-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+            </div>
+            <strong id="stat-completed">11</strong>
+            <p class="stat-warning">Ready for handover</p>
+          </article>
+        </div>
+
+        <!-- ================= JOB TABLE ================= -->
+        <section class="job-table-container">
+          <table class="job-table">
+            <thead>
+              <tr>
+                <th>JOB ID</th>
+                <th>CUSTOMER &amp; VEHICLE</th>
+                <th>DATE OPENED</th>
+                <th>MECHANIC</th>
+                <th>STATUS &amp; PROGRESS</th>
+                <th>EST. COST</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JOB 1 -->
+              <tr>
+                <td><span class="job-id">JC-1045</span></td>
+                <td>
+                  <div class="customer">
+                    <strong>Rahim Uddin</strong>
+                    <span>Toyota Corolla (2018) • Dhaka-Metro-Ga-12-3456</span>
+                  </div>
+                </td>
+                <td><span class="date">Oct 24, 2023</span></td>
+                <td>
+                  <div class="mechanic">
+                    <div class="mechanic-avatar photo-one">
+                      <img src="https://i.pravatar.cc/100?img=12" alt="Mechanic">
+                    </div>
+                    <span>Kamal H.</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="progress-info">
+                    <div class="progress-top">
+                      <span class="status in-progress">In Progress</span>
+                      <span class="percentage">65%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill blue-progress" style="width:65%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="cost">৳12,500</span></td>
+                <td>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- JOB 2 -->
+              <tr>
+                <td><span class="job-id">JC-1046</span></td>
+                <td>
+                  <div class="customer">
+                    <strong>Enterprise Logistics Co.</strong>
+                    <span>Hino Dutro Truck • Chattogram-Na-11-2233</span>
+                  </div>
+                </td>
+                <td><span class="date">Oct 25, 2023</span></td>
+                <td>
+                  <div class="mechanic">
+                    <div class="mechanic-avatar initials">ST</div>
+                    <span>Sadek T.</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="progress-info">
+                    <div class="progress-top">
+                      <span class="status awaiting">Awaiting Parts</span>
+                      <span class="percentage">30%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill red-progress" style="width:30%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="cost">৳45,000</span></td>
+                <td>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- JOB 3 -->
+              <tr>
+                <td><span class="job-id">JC-1042</span></td>
+                <td>
+                  <div class="customer">
+                    <strong>Nusrat Jahan</strong>
+                    <span>Honda Vezel (2020) • Sylhet-Gha-15-9988</span>
+                  </div>
+                </td>
+                <td><span class="date">Oct 23, 2023</span></td>
+                <td>
+                  <div class="mechanic">
+                    <div class="mechanic-avatar photo-two">
+                      <img src="https://i.pravatar.cc/100?img=33" alt="Mechanic">
+                    </div>
+                    <span>Rafiq M.</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="progress-info">
+                    <div class="progress-top">
+                      <span class="status quality">Quality Control</span>
+                      <span class="percentage">90%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-fill orange-progress" style="width:90%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="cost">৳8,200</span></td>
+                <td>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ================= TABLE FOOTER ================= -->
+          <div class="table-footer">
+            <span>Showing 1-10 of 42 job cards</span>
+
+            <div class="pagination">
+              <button class="page-arrow">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="page-number active-page">1</button>
+              <button class="page-number">2</button>
+              <button class="page-number">3</button>
+              <button class="page-arrow">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../../assets/js/manager/manager-store.js"></script>
+  <script src="../../assets/js/manager/manager-common.js"></script>
+  <script src="../../assets/js/manager/manager-jobCards.js"></script>
+</body>
+</html>

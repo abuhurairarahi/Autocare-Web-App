@@ -1,0 +1,606 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Live Repair Tracking
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-vehicle-header-bg: #eeedf6;
+    --vo-badge-bg: #e3e1ea;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-navy: #00175c;
+    --vo-navy-bright: #00288e;
+    --vo-view-estimate-bg: #d4e3ff;
+    --vo-view-estimate-text: #56657c;
+    --vo-status-blue-bg: #dbeafe;
+    --vo-status-blue-border: #bfdbfe;
+    --vo-status-blue-text: #1e40af;
+    --vo-status-blue-dot: #2563eb;
+    --vo-success-bg: #d1fae5;
+    --vo-success-border: #10b981;
+    --vo-success-text: #059669;
+    --vo-active: #2563eb;
+    --vo-active-border: #bfdbfe;
+    --vo-active-ping: #60a5fa;
+    --vo-radius-card: 12px;
+    --vo-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1200px;
+}
+
+/* ---------- Page header ---------- */
+.vo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vo-header__text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header__text p {
+    margin: 4px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-body);
+}
+
+.vo-header__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.vo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn i {
+    font-size: 13px;
+}
+
+.vo-btn--soft {
+    background: var(--vo-view-estimate-bg);
+    color: var(--vo-view-estimate-text);
+}
+
+.vo-btn--primary {
+    background: var(--vo-navy);
+    color: #ffffff;
+}
+
+/* ---------- Bento grid ---------- */
+.vo-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.vo-col-right {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ---------- Vehicle status card ---------- */
+.vo-vehicle-card {
+    flex: 2 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    overflow: hidden;
+}
+
+.vo-vehicle-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 24px 25px;
+    background: var(--vo-vehicle-header-bg);
+    border-bottom: 1px solid var(--vo-border);
+}
+
+.vo-vehicle-card__id {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.vo-vehicle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    background: var(--vo-page-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    color: var(--vo-navy);
+    font-size: 24px;
+}
+
+.vo-vehicle-card__id h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.24px;
+    line-height: 32px;
+    color: var(--vo-text-dark);
+}
+
+.vo-vehicle-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.vo-plate {
+    padding: 5px 9px;
+    background: var(--vo-badge-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-vehicle-card__desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-body);
+}
+
+.vo-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    background: var(--vo-status-blue-bg);
+    border: 1px solid var(--vo-status-blue-border);
+    border-radius: 9999px;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    color: var(--vo-status-blue-text);
+    white-space: nowrap;
+}
+
+.vo-status-pill__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--vo-status-blue-dot);
+}
+
+/* ---------- Timeline ---------- */
+.vo-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+.vo-timeline h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-stages {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.vo-stages__line {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 24px;
+    height: 4px;
+    border-radius: 9999px;
+    background: var(--vo-badge-bg);
+}
+
+.vo-stages__line--active {
+    right: auto;
+    width: calc((100% - 20%) / 3);
+    background: var(--vo-active);
+}
+
+.vo-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+}
+
+.vo-stage__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 9999px;
+    background: var(--vo-page-bg);
+    border: 2px solid var(--vo-border);
+    color: var(--vo-text-muted);
+    font-size: 18px;
+}
+
+.vo-stage--done .vo-stage__icon {
+    background: var(--vo-success-bg);
+    border-color: var(--vo-success-border);
+    box-shadow: var(--vo-shadow);
+    color: var(--vo-success-border);
+}
+
+.vo-stage--active .vo-stage__icon {
+    background: var(--vo-active);
+    border: 4px solid var(--vo-active-border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.vo-stage__ping {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: var(--vo-active-ping);
+}
+
+.vo-stage__label {
+    text-align: center;
+}
+
+.vo-stage__name {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-stage__name--active {
+    color: var(--vo-navy);
+}
+
+.vo-stage__status {
+    margin: 0;
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--vo-text-muted);
+}
+
+.vo-stage__status--done {
+    color: var(--vo-success-text);
+}
+
+.vo-stage__status--active {
+    color: var(--vo-active);
+}
+
+.vo-stage__time {
+    margin: 4px 0 0;
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Mechanic banner ---------- */
+.vo-mechanic-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 17px 16px 16px;
+    background: var(--vo-navy-bright);
+    border-top: 1px solid rgba(0, 23, 92, 0.2);
+}
+
+.vo-mechanic-banner__who {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vo-mechanic-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+}
+
+.vo-mechanic-banner__label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.55px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #7e97fe;
+    opacity: 0.8;
+}
+
+.vo-mechanic-banner__name {
+    margin: 2px 0 0;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: #ffffff;
+}
+
+.vo-mechanic-banner__eta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 17px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #7e97fe;
+    font-size: 16px;
+}
+
+/* ---------- Right column cards ---------- */
+.vo-card {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+}
+
+.vo-card h3 {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.vo-card__head h3 {
+    margin: 0;
+}
+
+.vo-badge {
+    padding: 4px 8px;
+    background: var(--vo-badge-bg);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-card__desc {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Gallery ---------- */
+.vo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.vo-gallery__item {
+    position: relative;
+    margin: 0;
+    height: 122px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vo-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vo-gallery__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.vo-gallery__item:hover .vo-gallery__overlay {
+    opacity: 1;
+}
+
+.vo-gallery__time {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 15px;
+    color: #ffffff;
+}
+
+.vo-gallery__more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 122px;
+    padding: 0 2px;
+    background: var(--vo-badge-bg);
+    border: 2px dashed var(--vo-border);
+    border-radius: 8px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+}
+
+.vo-gallery__more i {
+    font-size: 20px;
+}
+
+.vo-gallery__more span {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/* ---------- Service details ---------- */
+.vo-details {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vo-details__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0 9px;
+    border-bottom: 1px solid rgba(197, 197, 212, 0.5);
+}
+
+.vo-details__row--last {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.vo-details__row dt {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-details__row dd {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+    .vo-grid {
+        flex-direction: column;
+    }
+
+    .vo-vehicle-card,
+    .vo-col-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-card,
+    .vo-timeline {
+        padding: 18px;
+    }
+
+    .vo-vehicle-card__head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vo-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vo-stage__time {
+        display: none;
+    }
+}

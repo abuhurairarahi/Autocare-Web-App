@@ -1,0 +1,298 @@
+:root {
+    --rp-navy: #00175c;
+    --rp-navy-bright: #00288e;
+    --rp-page-bg: #fbf8ff;
+    --rp-panel: #f4f2fc;
+    --rp-border: #c5c5d4;
+    --rp-text-dark: #1a1b22;
+    --rp-text-body: #444652;
+    --rp-text-muted: #757684;
+    --rp-red: #ba1a1a;
+    --rp-red-soft: #ffdad6;
+    --rp-radius-card: 8px;
+    --rp-radius-img: 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--rp-page-bg);
+    color: var(--rp-text-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar-footer {
+    width: 100%;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--rp-page-bg);
+    overflow: auto;
+}
+
+.rp-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1280px;
+}
+
+/* ---------- Page header ---------- */
+.rp-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--rp-border);
+}
+
+.rp-header__text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.24px;
+    color: var(--rp-text-dark);
+}
+
+.rp-header__text p {
+    margin: 4px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--rp-text-body);
+}
+
+/* ---------- Buttons ---------- */
+.rp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.rp-btn i {
+    font-size: 14px;
+}
+
+.rp-btn--primary {
+    background: var(--rp-navy);
+    color: #ffffff;
+}
+
+/* ---------- Gallery grid ---------- */
+.rp-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.rp-col {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rp-col__title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--rp-text-dark);
+}
+
+.rp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+
+.rp-dot--before {
+    background: var(--rp-red);
+}
+
+.rp-dot--after {
+    background: var(--rp-navy-bright);
+}
+
+/* ---------- Photo cards ---------- */
+.rp-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.rp-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 13px;
+    background: var(--rp-panel);
+    border: 1px solid var(--rp-border);
+    border-radius: var(--rp-radius-card);
+}
+
+.rp-card__image {
+    position: relative;
+    width: 100%;
+    height: 192px;
+    border-radius: var(--rp-radius-img);
+    overflow: hidden;
+}
+
+.rp-card__image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.rp-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(26, 27, 34, 0.5);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.rp-card:hover .rp-card__overlay,
+.rp-card__overlay:focus-within {
+    opacity: 1;
+}
+
+.rp-overlay-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 9999px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rp-overlay-btn--view {
+    background: var(--rp-page-bg);
+    color: var(--rp-text-dark);
+}
+
+.rp-overlay-btn--delete {
+    background: var(--rp-red-soft);
+    color: var(--rp-red);
+}
+
+.rp-card__caption {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.rp-card__name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--rp-text-dark);
+}
+
+.rp-card__date {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--rp-text-muted);
+    white-space: nowrap;
+}
+
+/* ---------- Upload placeholder ---------- */
+.rp-upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    height: 256px;
+    padding: 13px;
+    background: var(--rp-panel);
+    border: 1px dashed var(--rp-border);
+    border-radius: var(--rp-radius-card);
+    color: var(--rp-text-muted);
+    cursor: pointer;
+}
+
+.rp-upload-placeholder i {
+    font-size: 24px;
+}
+
+.rp-upload-placeholder span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .rp-grid {
+        flex-direction: column;
+    }
+
+    .rp-col {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .rp-card__overlay {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 560px) {
+    .content {
+        padding: 16px;
+    }
+
+    .rp-card {
+        padding: 10px;
+    }
+}

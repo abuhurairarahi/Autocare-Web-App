@@ -1,0 +1,293 @@
+:root {
+    --text-muted: #757684;
+    --border-color: #e2e8f0;
+    --primary-blue: #0A2277;
+    --text-dark: #0B1220;
+    --white: #FEFEFE;
+    --bg-light: #F4F6F9;
+
+    /* Status Badges */
+    --status-pending-bg: #FEF3C7;
+    --status-pending-text: #D97706;
+    --status-approved-bg: #DCFCE7;
+    --status-approved-text: #16A34A;
+    --status-suspended-bg: #FEE2E2;
+    --status-suspended-text: #DC2626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Page Content Styles */
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+/* Toolbar Styles */
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 16px 24px;
+    border: 1px solid var(--border-color);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-light);
+}
+
+.results-count {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* Table Styles */
+.table-container {
+    background-color: var(--white);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: var(--white);
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    color: var(--text-dark);
+    vertical-align: middle;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.blue-bg {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.blue-light-bg {
+    background-color: #e0e7ff;
+    color: #3730a3;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.user-email {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Status Badges */
+.status-btn {
+    border: none;
+    padding: 6px 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 120px;
+}
+
+.status {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: inherit;
+    text-align: center;
+    width: 100px;
+}
+
+.status:has(option[value="Pending"]:checked) {
+    color: var(--status-pending-text);
+}
+
+.status-btn:has(option[value="Pending"]:checked) {
+    background-color: var(--status-pending-bg);
+}
+
+.status:has(option[value="Active"]:checked) {
+    color: var(--status-approved-text);
+}
+
+.status-btn:has(option[value="Active"]:checked) {
+    background-color: var(--status-approved-bg);
+}
+
+.status:has(option[value="Suspended"]:checked) {
+    color: var(--status-suspended-text);
+}
+
+.status-btn:has(option[value="Suspended"]:checked) {
+    background-color: var(--status-suspended-bg);
+}
+
+/* Options dropdown popup list styling */
+.status option {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 16px 24px;
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.page-nav {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.page-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 6px;
+}
+
+.page-num {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-num.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.page-num:hover:not(.active) {
+    background-color: var(--bg-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+}

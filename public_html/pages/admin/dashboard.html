@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare Admin - Dashboard Overview</title>
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item active"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <main class="content-body">
+                <div class="page-header">
+                    <div>
+                        <h1>Dashboard Overview</h1>
+                        <p class="subtitle">System-wide metrics and current operational status.</p>
+                    </div>
+                    <span class="select-icon select-input"><i class="fa-regular fa-calendar"></i>
+                    <select name="select-time" id="time-filter" class="date-filter-dropdown">
+                        <option value="Last-30-day" id="last-30">Last 30 Days</option>
+                        <option value="Last 1 Year" id="last-One-year">Last 1 Year</option>
+                    </select></span>
+                </div>
+
+                <!-- Stat cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon icon-purple"><i class="fa-solid fa-user-group"></i></span>
+                            <span class="stat-badge badge-green"><i class="fa-solid fa-arrow-up-right-dots"></i> 12%</span>
+                        </div>
+                        <p class="stat-label">Total Workshop Managers</p>
+                        <p class="stat-value" id="total-managers">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon icon-orange"><i class="fa-regular fa-clock"></i></span>
+                            <span class="stat-badge badge-red"><i class="fa-solid fa-arrow-up-right-dots"></i> Live</span>
+                        </div>
+                        <p class="stat-label">Pending Mech. Approvals</p>
+                        <p class="stat-value" id="pending-approvals">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon icon-slate"><i class="fa-solid fa-industry"></i></span>
+                            <span class="stat-badge badge-green"><i class="fa-solid fa-arrow-up-right-dots"></i> Live</span>
+                        </div>
+                        <p class="stat-label">Active Workshops</p>
+                        <p class="stat-value" id="active-workshops">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon icon-blue"><i class="fa-solid fa-sack-dollar"></i></span>
+                            <span class="stat-badge badge-green"><i class="fa-solid fa-arrow-up-right-dots"></i> Live</span>
+                        </div>
+                        <p class="stat-label">Monthly Revenue</p>
+                        <p class="stat-value" id="monthly-revenue">—</p>
+                    </div>
+                </div>
+
+                <!-- Revenue trend + Recent activity -->
+                <div class="row-2col">
+                    <section class="card panel revenue-chart-panel">
+                        <div class="panel-header">
+                            <h2>Revenue Trend</h2>
+                            <button class="dots-btn" aria-label="More options">⋯</button>
+                        </div>
+                        <canvas id="revenue-chart" aria-label="Revenue trend chart" role="img"></canvas>
+                        <div class="chart-loading" id="revenue-chart-loading">Loading revenue trend…</div>
+                    </section>
+
+                    <section class="card panel activity-panel">
+                        <div class="panel-header">
+                            <h2>Recent Activity</h2>
+                            <button type="button" class="link view-all-activities" id="view-all-activities">View All</button>
+                        </div>
+                        <ul class="activity-list" id="activity-list" aria-live="polite"></ul>
+                    </section>
+                </div>
+
+                <!-- Bottom row: bar chart, top workshops, distribution -->
+                <div class="row-3col">
+                    <section class="card panel">
+                        <div class="panel-header">
+                            <h2>Services by Category</h2>
+                        </div>
+                        <div class="bar-chart" id="services-by-category-chart">
+                            <!-- Bars will be generated by JS -->
+                        </div>
+                    </section>
+
+                    <section class="card panel">
+                        <div class="panel-header">
+                            <h2>Top 5 Workshops</h2>
+                        </div>
+                        <ul class="workshop-list" id="top-workshops-list" aria-live="polite"></ul>
+                    </section>
+
+                    <section class="card panel">
+                        <div class="panel-header">
+                            <h2>Service Distribution</h2>
+                        </div>
+                        <div class="donut-wrap">
+                            <div class="donut" id="service-donut" aria-label="Service distribution chart">
+                                <div class="donut-hole"></div>
+                            </div>
+                        </div>
+                        <div class="legend" id="service-legend"></div>
+                    </section>
+                </div>
+            </main>
+        </main>
+    </div>
+    </div>
+<script src="../../assets/js/admin/admin.js?v=2"></script>
+<script src="../../assets/js/admin/dashboard.js?v=2"></script>
+</body>
+
+</html>

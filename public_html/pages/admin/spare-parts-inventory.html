@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Spare Parts Inventory</title>
+    <link rel="stylesheet" href="../../assets/css/admin/spare-parts-inventory.css">
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item active"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-body">
+                <div class="page-header">
+                    <div>
+                        <h1>Spare Parts Inventory</h1>
+                        <p>Manage workshop stock levels, track values, and initiate restocks.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button class="btn btn-outline" id="export-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i> Export</button>
+                        <button class="btn btn-primary" id="restock-btn"><i class="fa-solid fa-cart-shopping"></i> Restock</button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">TOTAL PARTS</span>
+                            <div class="stat-value-row">
+                                <h2 id="total-parts-val">0</h2>
+                                <span class="badge badge-success"><i class="fa-solid fa-arrow-trend-up"></i>
+                                    +0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">LOW STOCK ITEMS</span>
+                            <div class="stat-value-row">
+                                <h2 id="low-stock-val">0</h2>
+                                <span class="badge badge-danger"><i class="fa-solid fa-arrow-down"></i> 0 Critical</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">INVENTORY VALUE</span>
+                            <h2 id="inventory-value-val">৳0</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Filters -->
+                <div class="table-filter-bar">
+                    <div class="filter-dropdowns">
+                        <div class="dropdown">
+                        <select name="Categories" id="filter-category" class="indi-drop">
+                            <option value="All Categories">All Categories</option>
+                        </select></div>
+                        <div class="dropdown">
+                        <select name="Brands" id="filter-brand" class="indi-drop">
+                            <option value="All Brands">All Brands</option>
+                        </select></div>
+                        <span class="dropdown dropdown-span"> Status: 
+                        <select name="Status" id="filter-status" class="stat-drop">
+                            <option value="All">All</option>
+                            <option value="In Stock">In Stock</option>
+                            <option value="Low Stock">Low Stock</option>
+                            <option value="Out of Stock">Out of Stock</option>
+                        </select>
+                        </span>
+                    </div>
+                    <div class="filter-tools">
+                        <button class="tool-btn"><i class="fa-solid fa-bars"></i></button>
+                        <button class="tool-btn" id="reload-btn"><i class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PART ID</th>
+                                <th>NAME</th>
+                                <th>CATEGORY</th>
+                                <th>BRAND</th>
+                                <th>QUANTITY</th>
+                                <th>UNIT PRICE</th>
+                                <th>SUPPLIER</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table-body">
+                            <!-- Dynamic Content -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Footer -->
+                <div class="pagination-footer">
+                    <span id="table-info">Showing 0 to 0 of 0 entries</span>
+                    <div class="pagination-controls">
+                        <button class="page-btn" id="prev-page"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div id="pagination-numbers" style="display:flex; gap:6px;"></div>
+                        <button class="page-btn" id="next-page"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Restock Modal -->
+    <div class="modal-overlay" id="restock-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Restock Parts</h2>
+                <button class="close-modal" id="close-restock">&times;</button>
+            </div>
+            <form id="restock-form">
+                <div class="form-group">
+                    <label>Parts Name</label>
+                    <input type="text" name="name" list="parts-list" required>
+                    <datalist id="parts-list"></datalist>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category" id="restock-category" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" name="brand" list="brands-list" required>
+                    <datalist id="brands-list"></datalist>
+                </div>
+                <div style="display:flex; gap:16px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Quantity</label>
+                        <input type="number" name="quantity" min="1" required>
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label>Unit Price (&#2547;)</label>
+                        <input type="number" name="unit_price" min="0" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Supplier</label>
+                    <input type="text" name="supplier" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" id="cancel-restock">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Restock</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update Stock Modal -->
+    <div class="modal-overlay" id="update-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Update Stock</h2>
+                <button class="close-modal" id="close-update">&times;</button>
+            </div>
+            <form id="update-form">
+                <input type="hidden" name="id" id="update-id">
+                <div class="form-group">
+                    <label>Parts Name</label>
+                    <input type="text" id="update-name" disabled style="background:#f4f6f9;">
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" name="quantity" id="update-quantity" min="0" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" id="cancel-update">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Stock</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="../../assets/js/admin/admin.js"></script>
+<script src="../../assets/js/admin/spare-parts-inventory.js"></script>
+</body>
+
+</html>

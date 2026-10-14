@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - Revenue Reports</title>
+    <link rel="stylesheet" href="../../assets/css/admin/revenue-reports.css">
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item active"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Service Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Wrapper -->
+            <div class="dashboard-body">
+                <!-- Page Title Section -->
+                <div class="page-title-row">
+                    <div>
+                        <h1>Revenue Reports</h1>
+                        <p class="subtitle">Monthly financial overview and transaction details.</p>
+                    </div>
+                    <div class="action-filters">
+                        <button class="secondary-btn" id="pdf-btn"><i class="fa-regular fa-file-pdf"></i> Generate PDF</button>
+                        <button class="primary-btn" id="csv-btn"><i class="fa-solid fa-download"></i> Download CSV</button>
+                    </div>
+                </div>
+
+                <!-- Filter Card Section -->
+                <div class="card filter-card">
+                    <div class="filter-grid">
+                        <div class="filter-group">
+                            <label for="month-select">MONTH</label>
+                            <div class="select-wrapper">
+                                <select id="month-select">
+                                    <option value="January" selected>January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="year-select">YEAR</label>
+                            <div class="select-wrapper">
+                                <select id="year-select">
+                                    <option value="2026" selected>2026</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="filter-group location-group">
+                            <label for="location-select">WORKSHOP LOCATION</label>
+                            <div class="select-wrapper">
+                                <select id="location-select">
+                                    <option value="All Workshops" selected>All Workshops (Global)</option>
+                                    <option value="Dhaka">Dhaka Branch</option>
+                                    <option value="Rajshahi">Rajshahi Branch</option>
+                                    <option value="Chittagong">Chittagong Branch</option>
+                                    <option value="Khulna">Khulna Branch</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                        <div class="filter-action">
+                            <button class="apply-btn" id="apply-btn">Apply Filters</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report Container (Dynamically Populated) -->
+                <div id="report-container" style="margin-top: 24px;"></div>
+
+            </div>
+        </main>
+    </div>
+<script src="../../assets/js/admin/admin.js"></script>
+<script src="../../assets/js/admin/revenue-reports.js?v=3"></script>
+</body>
+
+</html>

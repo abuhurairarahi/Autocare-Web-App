@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCare - System Notices</title>
+    <link rel="stylesheet" href="../../assets/css/admin/service-broadcast.css">
+    <link rel="stylesheet" href="../../assets/css/admin/default-sidebar-topbar-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+                <span class="brand-name">
+                    <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+                </span>
+            </div>
+
+            <!-- Nav Bar -->
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>
+                    Dashboard</a>
+                <a href="workshop-managers.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Managers</a>
+                <a href="workshop-mechanics.html" class="nav-item"><i class="fa-solid fa-user-gear"></i> Workshop
+                    Mechanics</a>
+                <a href="vehicle-owners.html" class="nav-item"><i class="fa-solid fa-car-side"></i> Vehicle
+                    Owners</a>
+                <a href="service-categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Service
+                    Categories</a>
+                <a href="spare-parts-inventory.html" class="nav-item"><i class="fa-solid fa-boxes-stacked"></i> Spare
+                    Parts Inventory</a>
+                <a href="analytics.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+                <a href="revenue-reports.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i>
+                    Revenue Reports</a>
+                <a href="service-offers.html" class="nav-item"><i class="fa-solid fa-tags"></i> Service Offers</a>
+                <a href="service-broadcast.html" class="nav-item active"><i class="fa-solid fa-bullhorn"></i> Service
+                    Broadcast</a>
+            </nav>
+
+            <a class="logout" href="../login.html">
+                <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="search">
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <input type="text" placeholder="Search managers, workshops...">
+                </div>
+
+                <div class="top-actions">
+                    <div class="notification">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <b></b>
+                    </div>
+
+                    <div class="mail">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <!-- PAGE CONTENT -->
+            <div class="content-body">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">System Notices</h1>
+                        <p class="page-subtitle">Manage announcements and maintenance alerts across all workshops.</p>
+                    </div>
+                    <select id="status-filter" class="btn-outline" style="appearance:auto; cursor:pointer;">
+                        <option value="All">All</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Scheduled">Scheduled</option>
+                        <option value="Published">Published</option>
+                    </select>
+                </div>
+
+                <div class="grid-container">
+                    <!-- LEFT COLUMN: NOTICES TABLE -->
+                    <div class="table-card">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Notice Title</th>
+                                        <th>Type</th>
+                                        <th>Audience</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="notices-tbody">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Table Pagination -->
+                        <div class="pagination-footer">
+                            <span class="results-count" id="table-info">Showing 0 of 0 notices</span>
+                            <div class="pagination">
+                                <button class="page-btn" id="prev-page"><i class="fa-solid fa-chevron-left"></i></button>
+                                <div id="pagination-numbers" style="display:flex; gap:4px;"></div>
+                                <button class="page-btn" id="next-page"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: CREATE NOTICE FORM -->
+                    <div class="form-card">
+                        <h2 class="card-title"><i class="fa-solid fa-circle-plus"></i> Create New Notice</h2>
+
+                        <form class="notice-form" id="create-notice-form">
+                            <div class="form-group">
+                                <label>Notice Title</label>
+                                <input type="text" id="notice-title" class="form-control" placeholder="e.g., Scheduled Maintenance" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select id="notice-type" class="form-control" required>
+                                        <option value="Maintenance">Maintenance</option>
+                                        <option value="Update">Update</option>
+                                        <option value="Alert">Alert</option>
+                                        <option value="Announcement">Announcement</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Priority</label>
+                                    <select id="notice-priority" class="form-control" required>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Target Audience</label>
+                                <select id="notice-audience" class="form-control" required>
+                                    <option value="All Workshops">All Workshops</option>
+                                    <option value="Premium Subscribers">Premium Subscribers</option>
+                                    <option value="Developers Only">Developers Only</option>
+                                    <option value="All Users">All Users</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message Content</label>
+                                <textarea id="notice-content" class="form-control textarea"
+                                    placeholder="Enter detailed notice information here..." required></textarea>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="schedule-later">
+                                <label for="schedule-later">Schedule for later</label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-draft" id="btn-draft">Save Draft</button>
+                                <button type="button" class="btn-primary" id="btn-publish">Publish Notice</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal for viewing/publishing existing draft/scheduled notices -->
+    <div class="modal-overlay" id="notice-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Review Notice</h2>
+                <button class="close-modal" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="edit-notice-form">
+                <input type="hidden" id="edit-notice-id">
+                <input type="hidden" id="edit-notice-status">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="edit-notice-title" disabled style="background:#f4f6f9;">
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea id="edit-notice-content" disabled style="width:100%; padding:10px; border:1px solid var(--border-color); border-radius:6px; min-height:80px; background:#f4f6f9;"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-outline" id="modal-close-btn" style="padding:10px 18px; cursor:pointer;">Close</button>
+                    <button type="button" class="btn-primary" id="modal-publish-btn" style="padding:10px 18px; border:none; background:#2563EB; color:#fff; border-radius:6px; cursor:pointer;">Publish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="../../assets/js/admin/admin.js"></script>
+<script src="../../assets/js/admin/service-broadcast.js?v=2"></script>
+</body>
+
+</html>

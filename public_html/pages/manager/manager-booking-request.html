@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare - Service Booking Requests</title>
+  <link rel="stylesheet" href="../../assets/css/manager/Default-sidebar-topbar-style.css">
+  <link rel="stylesheet" href="../../assets/css/manager/manager-booking-request.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a class="brand" href="manager-dashboard.html" style="text-decoration: none;">
+        <span class="brand-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="brand-name">
+          <span style="color: #ffffff;">Auto</span><span style="color: #f97316;">Care</span>
+        </span>
+      </a>
+
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <a class="nav-item" href="manager-dashboard.html">
+          <span class="icon"><i class="fa-solid fa-border-all"></i></span>Dashboard
+        </a>
+
+        <a class="nav-item active" href="manager-booking-request.html">
+          <span class="icon"><i class="fa-regular fa-calendar-check"></i></span>Booking Requests
+        </a>
+
+        <a class="nav-item" href="manager-jobCards.html">
+          <span class="icon"><i class="fa-regular fa-clipboard"></i></span>Job Cards
+        </a>
+
+        <a class="nav-item" href="manager-mechanics.html">
+          <span class="icon"><i class="fa-solid fa-users-gear"></i></span>Mechanics
+        </a>
+
+        <a class="nav-item" href="manager-process-tracker.html">
+          <span class="icon"><i class="fa-solid fa-list-check"></i></span>Job Tracking
+        </a>
+
+        <a class="nav-item" href="manager-cost-estimation.html">
+          <span class="icon"><i class="fa-solid fa-calculator"></i></span>Cost Estimates
+        </a>
+
+        <a class="nav-item" href="manager-invoice-management.html">
+          <span class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Invoices
+        </a>
+
+        <a class="nav-item" href="manager-payment-approval.html">
+          <span class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>Spare Parts Approval
+        </a>
+
+        <a class="nav-item" href="manager-chat.html">
+          <span class="icon"><i class="fa-regular fa-comments"></i></span>Chats
+        </a>
+
+        <a class="nav-item" href="manager-performance.html">
+          <span class="icon"><i class="fa-solid fa-chart-line"></i></span>Report
+        </a>
+      </nav>
+
+      <a class="logout" href="../login.html">
+        <span><i class="fa-solid fa-right-from-bracket"></i></span>Logout
+      </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input type="text" placeholder="Search managers, workshops...">
+        </div>
+
+        <div class="top-actions">
+          <div class="notification">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <b></b>
+          </div>
+
+          <div class="mail">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <section class="content">
+
+        <!-- Page Header & Action Controls -->
+        <div class="page-heading">
+          <div>
+            <h1>Service Booking Requests</h1>
+            <p>Manage incoming service and repair requests from fleet managers and retail customers.</p>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-outline">
+              <svg viewBox="0 0 24 24">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+                <line x1="1" y1="14" x2="7" y2="14"></line>
+                <line x1="9" y1="8" x2="15" y2="8"></line>
+                <line x1="17" y1="16" x2="23" y2="16"></line>
+              </svg>
+              Filter
+            </button>
+
+            <button class="btn-outline">
+              <svg viewBox="0 0 24 24">
+                <line x1="11" y1="5" x2="11" y2="19"></line>
+                <line x1="18" y1="9" x2="18" y2="19"></line>
+                <line x1="4" y1="13" x2="4" y2="19"></line>
+              </svg>
+              Sort
+            </button>
+
+            <button class="btn-outline">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+
+        <!-- MAIN LAYOUT GRID -->
+        <div class="booking-grid">
+
+          <!-- Left Table Card -->
+          <div class="panel table-panel">
+            <div class="panel-header">
+              <h2>Pending Requests</h2>
+              <span class="badge-count">4 New</span>
+            </div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>BOOKING ID</th>
+                    <th>OWNER / FLEET</th>
+                    <th>VEHICLE</th>
+                    <th>SERVICE</th>
+                    <th>DATE</th>
+                    <th>PRIORITY</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <!-- Row 1 Selected -->
+                  <tr class="selected">
+                    <td class="bold">BRQ-2023-145</td>
+                    <td>Apex Logistics</td>
+                    <td>
+                      <div class="vehicle-cell">
+                        <span>Ford Transit</span>
+                        <small>LND-294-K</small>
+                      </div>
+                    </td>
+                    <td>Transmission Overhaul</td>
+                    <td>Oct 24, 09:00</td>
+                    <td><span class="badge-priority high">High</span></td>
+                    <td><span class="badge-status">Pending Review</span></td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr>
+                    <td class="bold">BRQ-2023-146</td>
+                    <td>Sarah Jenkins</td>
+                    <td>
+                      <div class="vehicle-cell">
+                        <span>Toyota RAV4</span>
+                        <small>NYC-882-M</small>
+                      </div>
+                    </td>
+                    <td>Standard 50k Service</td>
+                    <td>Oct 25, 14:30</td>
+                    <td><span class="badge-priority normal">Normal</span></td>
+                    <td><span class="badge-status">Pending Review</span></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Right Details Card -->
+          <div class="panel details-panel">
+
+            <div class="details-header">
+              <span class="subtitle">Request Details</span>
+              <h2>BRQ-2023-145</h2>
+              <p class="submitted-date">Submitted Oct 23, 16:45</p>
+            </div>
+
+            <!-- Owner Information Box -->
+            <div class="info-card">
+              <span class="card-label">OWNER INFORMATION</span>
+              <div class="owner-details">
+                <div class="avatar-box">AL</div>
+                <div class="owner-text">
+                  <h3>Apex Logistics</h3>
+                  <p><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg> (555) 123-4567</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vehicle Profile Box -->
+            <div class="info-card">
+              <span class="card-label">VEHICLE PROFILE</span>
+              <div class="vehicle-details">
+                <div class="vehicle-title">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                    <line x1="7" y1="21" x2="7" y2="16"></line>
+                    <line x1="17" y1="21" x2="17" y2="16"></line>
+                  </svg>
+                  <h3>2018 Ford Transit 350</h3>
+                </div>
+
+                <div class="vehicle-specs">
+                  <div>
+                    <span class="spec-label">Plate</span>
+                    <strong class="spec-val">LND-294-K</strong>
+                  </div>
+                  <div>
+                    <span class="spec-label">VIN</span>
+                    <strong class="spec-val">1FTYR2XG2JKA*****</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Description -->
+            <div class="service-description">
+              <span class="card-label">SERVICE DESCRIPTION</span>
+              <p>Driver reports harsh shifting between 2nd and 3rd gear. Occasional slipping when under heavy load.
+                Check transmission fluid levels and perform diagnostic. Approved for initial teardown up to 4 hours.</p>
+            </div>
+
+            <!-- Detail Action Buttons -->
+            <div class="detail-actions">
+              <button class="btn-approve">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Approve & Create Job Card
+              </button>
+
+              <div class="secondary-actions">
+                <button class="btn-secondary">View History</button>
+                <button class="btn-danger">Reject</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../../assets/js/manager/manager-store.js"></script>
+  <script src="../../assets/js/manager/manager-common.js"></script>
+  <script src="../../assets/js/manager/manager-booking-request.js?v=2"></script>
+</body>
+
+</html>

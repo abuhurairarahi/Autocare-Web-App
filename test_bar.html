@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.bar-chart {
+    height: 220px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 22px;
+    padding: 20px;
+}
+.bar {
+    width: 40px;
+    border-radius: 6px 6px 0 0;
+}
+</style>
+</head>
+<body>
+<div class="bar-chart" id="services-by-category-chart"></div>
+<script>
+    const items = [
+        {"category":"Brake Repair","count":"1"},
+        {"category":"Engine Diagnostics","count":"1"},
+        {"category":"General Servicing","count":"1"},
+        {"category":"Tire Services","count":"0"}
+    ];
+    const colors = ['#00288E', '#4C63B6', '#7C3AED', '#0EA5E9', '#F59E0B'];
+    
+    const barChart = document.getElementById('services-by-category-chart');
+    if (barChart) {
+        barChart.innerHTML = '';
+        const maxCount = Math.max(...items.map(i => Number(i.count || 0)), 1);
+        items.forEach((item, index) => {
+            if (Number(item.count || 0) === 0) return; // Skip zero counts
+            
+            const wrapper = document.createElement('div');
+            wrapper.style.display = 'flex';
+            wrapper.style.flexDirection = 'column';
+            wrapper.style.alignItems = 'center';
+            wrapper.style.height = '100%';
+            wrapper.style.justifyContent = 'flex-end';
+            wrapper.style.gap = '6px';
+            wrapper.style.flex = '1';
+
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            const percentage = Math.max(8, (Number(item.count || 0) / maxCount) * 100);
+            // subtract 20px for the text label height roughly
+            bar.style.height = `calc(${percentage}% - 20px)`; 
+            bar.style.background = colors[index % colors.length];
+            bar.style.width = '100%';
+            bar.style.maxWidth = '40px';
+            bar.title = `${item.category}: ${item.count}`;
+
+            const label = document.createElement('span');
+            label.style.fontSize = '10px';
+            label.style.color = '#64748b';
+            label.style.textAlign = 'center';
+            label.style.width = '100%';
+            label.style.whiteSpace = 'nowrap';
+            label.style.overflow = 'hidden';
+            label.style.textOverflow = 'ellipsis';
+            label.textContent = item.category;
+
+            wrapper.appendChild(bar);
+            wrapper.appendChild(label);
+            barChart.appendChild(wrapper);
+        });
+    }
+</script>
+</body>
+</html>

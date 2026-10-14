@@ -1,0 +1,335 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / My Vehicles
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #eeedf6;
+    --vo-badge-bg: #e9e7f0;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-navy: #00175c;
+    --vo-navy-bright: #00288e;
+    --vo-view-estimate-bg: #d4e3ff;
+    --vo-view-estimate-text: #56657c;
+    --vo-active-bg: rgba(251, 248, 255, 0.9);
+    --vo-active-dot: #10b981;
+    --vo-active-text: #00288e;
+    --vo-shop-bg: rgba(238, 237, 246, 0.9);
+    --vo-shop-dot: #757684;
+    --vo-shop-text: #444652;
+    --vo-warn-text: #93000a;
+    --vo-radius-card: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1280px;
+}
+
+/* ---------- Page header ---------- */
+.vo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vo-header__text h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header__text p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+/* ---------- Vehicle cards grid ---------- */
+.vo-vehicles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.vo-vcard {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 400px;
+    background: #ffffff;
+    border: 1px solid var(--vo-border);
+    border-radius: var(--vo-radius-card);
+    overflow: hidden;
+}
+
+/* ---------- Media / photo ---------- */
+.vo-vcard__media {
+    position: relative;
+    height: 192px;
+    background: var(--vo-panel);
+}
+
+.vo-vcard__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vo-vcard__status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 13px;
+    border: 1px solid rgba(197, 197, 212, 0.3);
+    border-radius: 9999px;
+    background: var(--vo-active-bg);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--vo-active-text);
+}
+
+.vo-vcard__status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: var(--vo-active-dot);
+}
+
+.vo-vcard__status--shop {
+    background: var(--vo-shop-bg);
+    color: var(--vo-shop-text);
+}
+
+.vo-vcard__status--shop .vo-vcard__status-dot {
+    background: var(--vo-shop-dot);
+}
+
+/* ---------- Card body ---------- */
+.vo-vcard__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px;
+}
+
+.vo-vcard__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+}
+
+.vo-vcard__id h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-vcard__id p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-plate {
+    flex-shrink: 0;
+    padding: 14px 13px 8px;
+    background: var(--vo-badge-bg);
+    border: 1px solid rgba(197, 197, 212, 0.5);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--vo-text-dark);
+    white-space: nowrap;
+}
+
+.vo-plate--single {
+    padding: 14px 13px 8px;
+}
+
+/* ---------- Specs grid ---------- */
+.vo-vcard__specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-bottom: 24px;
+}
+
+.vo-vcard__spec-label {
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.55px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: var(--vo-text-muted);
+}
+
+.vo-vcard__spec-value {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vo-vcard__spec-value i {
+    font-size: 12px;
+    color: var(--vo-text-dark);
+}
+
+.vo-vcard__spec-value--vin {
+    display: block;
+}
+
+.vo-vcard__spec-value--warn {
+    color: var(--vo-warn-text);
+    font-weight: 500;
+}
+
+.vo-vcard__spec-value--warn i {
+    color: var(--vo-warn-text);
+}
+
+.vo-vcard__spec-value--muted {
+    color: var(--vo-text-body);
+}
+
+.vo-vcard__spec-value--muted i {
+    color: var(--vo-text-muted);
+}
+
+.vo-vcard__spec-value--accent {
+    color: var(--vo-navy);
+    font-weight: 500;
+}
+
+.vo-vcard__spec-value--accent i {
+    color: var(--vo-navy);
+}
+
+/* ---------- Card actions ---------- */
+.vo-vcard__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 17px;
+    border-top: 1px solid rgba(197, 197, 212, 0.5);
+}
+
+.vo-vcard__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    color: var(--vo-navy);
+}
+
+.vo-vcard__link:hover {
+    background: var(--vo-panel);
+}
+
+.vo-vcard__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 17px;
+    background: var(--vo-view-estimate-bg);
+    border: 1px solid rgba(197, 197, 212, 0.3);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    color: var(--vo-view-estimate-text);
+}
+
+.vo-vcard__btn:hover {
+    background: #c2d7ff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .vo-vcard {
+        max-width: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-vehicles-grid {
+        flex-direction: column;
+    }
+
+    .vo-vcard {
+        min-width: 0;
+        max-width: none;
+    }
+
+    .vo-vcard__specs {
+        grid-template-columns: 1fr;
+    }
+}

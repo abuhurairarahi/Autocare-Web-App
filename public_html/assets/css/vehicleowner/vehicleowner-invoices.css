@@ -1,0 +1,459 @@
+/* =====================================================
+   AutoCare - Vehicle Owner / Invoice Management
+   Page-specific styles. Sidebar + top bar chrome comes
+   from /Styles/Shared/vehicleowner-sidebar-topbar-style.css
+   ===================================================== */
+
+:root {
+    --vo-page-bg: #fbf8ff;
+    --vo-panel: #f4f2fc;
+    --vo-input-bg: #eeedf6;
+    --vo-table-head-bg: #eeedf6;
+    --vo-gray-bg: #e3e1ea;
+    --vo-border: #c5c5d4;
+    --vo-text-dark: #1a1b22;
+    --vo-text-body: #444652;
+    --vo-text-muted: #757684;
+    --vo-navy: #00175c;
+    --vo-blue-pill-bg: #d4e3ff;
+    --vo-blue-pill-text: #56657c;
+    --vo-badge-blue-bg: #dde1ff;
+    --vo-brown: #611e00;
+    --vo-brown-text: #e6835b;
+    --vo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --vo-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--vo-page-bg);
+    color: var(--vo-text-dark);
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- Content shell ---------- */
+.content {
+    flex: 1;
+    padding: 24px;
+    background: var(--vo-page-bg);
+}
+
+.vo-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1280px;
+}
+
+/* ---------- Page header + filters ---------- */
+.vo-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.vo-header__text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.24px;
+    line-height: 32px;
+    color: var(--vo-text-dark);
+}
+
+.vo-header__text p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-body);
+}
+
+.vo-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.vo-select-wrap {
+    position: relative;
+    display: flex;
+}
+
+.vo-select-wrap select {
+    padding: 9px 41px 9px 17px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+    appearance: none;
+    cursor: pointer;
+}
+
+.vo-select-chevron {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: var(--vo-text-muted);
+    pointer-events: none;
+}
+
+.vo-date-input {
+    padding: 9px 17px;
+    background: var(--vo-input-bg);
+    border: 1px solid var(--vo-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+}
+
+.vo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.vo-btn--primary {
+    padding: 8px 16px;
+    background: var(--vo-navy);
+    color: #ffffff;
+    box-shadow: var(--vo-shadow-sm);
+}
+
+.vo-btn i {
+    font-size: 12px;
+}
+
+/* ---------- KPI cards ---------- */
+.vo-kpis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.vo-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1 1 280px;
+    padding: 25px;
+    background: var(--vo-panel);
+    border: 1px solid var(--vo-border);
+    border-radius: 12px;
+}
+
+.vo-kpi__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.vo-kpi__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.vo-kpi__icon--paid {
+    background: var(--vo-blue-pill-bg);
+    color: var(--vo-navy);
+}
+
+.vo-kpi__icon--pending {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.vo-kpi__icon--total {
+    background: var(--vo-brown);
+    color: #fdf0e8;
+}
+
+.vo-kpi__pill {
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+.vo-kpi__pill--blue {
+    background: var(--vo-badge-blue-bg);
+    color: var(--vo-navy);
+}
+
+.vo-kpi__pill--gray {
+    background: var(--vo-gray-bg);
+    color: var(--vo-text-body);
+}
+
+.vo-kpi__label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    color: var(--vo-text-body);
+}
+
+.vo-kpi__value {
+    margin: 4px 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.64px;
+    line-height: 40px;
+    color: var(--vo-text-dark);
+}
+
+/* ---------- Table card ---------- */
+.vo-table-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid var(--vo-border);
+    border-radius: 12px;
+    box-shadow: var(--vo-shadow-card);
+    overflow: hidden;
+}
+
+.vo-table-wrap {
+    overflow-x: auto;
+}
+
+.vo-invoices-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vo-invoices-table th {
+    padding: 12px 24px;
+    background: var(--vo-table-head-bg);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 16px;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--vo-text-body);
+    white-space: nowrap;
+}
+
+.vo-invoices-table th.vo-num {
+    text-align: right;
+}
+
+.vo-invoices-table td {
+    padding: 22px 24px;
+    border-top: 1px solid var(--vo-border);
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--vo-text-dark);
+    white-space: nowrap;
+}
+
+.vo-invoices-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.vo-invoice-link {
+    font-weight: 500;
+    color: var(--vo-navy);
+    text-decoration: none;
+}
+
+.vo-invoice-link:hover {
+    text-decoration: underline;
+}
+
+.vo-cell-amount {
+    font-weight: 500;
+}
+
+.vo-num {
+    text-align: right;
+}
+
+/* ---------- Status pills ---------- */
+.vo-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.vo-status__dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+}
+
+.vo-status--paid {
+    background: var(--vo-blue-pill-bg);
+    color: var(--vo-blue-pill-text);
+}
+
+.vo-status--paid .vo-status__dot {
+    background: var(--vo-navy);
+}
+
+.vo-status--pending {
+    background: var(--vo-brown);
+    color: var(--vo-brown-text);
+}
+
+.vo-status--pending .vo-status__dot {
+    background: var(--vo-brown-text);
+}
+
+.vo-status--processing {
+    background: var(--vo-gray-bg);
+    color: var(--vo-text-body);
+}
+
+.vo-status--processing .vo-status__dot {
+    background: #505f76;
+}
+
+/* ---------- Row actions ---------- */
+.vo-row-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vo-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--vo-text-body);
+    cursor: pointer;
+}
+
+.vo-icon-btn:hover {
+    background: var(--vo-panel);
+    color: var(--vo-navy);
+}
+
+/* ---------- Table footer / pagination ---------- */
+.vo-table-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 13px 24px 12px;
+    background: var(--vo-page-bg);
+    border-top: 1px solid var(--vo-border);
+}
+
+.vo-showing {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--vo-text-body);
+}
+
+.vo-pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.vo-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    background: transparent;
+    border: 1px solid var(--vo-border);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--vo-text-dark);
+    cursor: pointer;
+}
+
+.vo-page-btn--active {
+    background: var(--vo-navy);
+    border-color: var(--vo-navy);
+    color: #ffffff;
+}
+
+.vo-page-btn--nav {
+    color: var(--vo-text-body);
+    font-size: 12px;
+}
+
+.vo-page-btn--nav:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .content {
+        padding: 16px;
+    }
+
+    .vo-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vo-filters {
+        width: 100%;
+    }
+
+    .vo-select-wrap,
+    .vo-select-wrap select {
+        flex: 1;
+        width: 100%;
+    }
+}
